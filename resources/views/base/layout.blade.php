@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Meu Site')</title>
+    <title>@yield('title')</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
@@ -15,20 +15,20 @@
             <img src="{{ asset('img/logo-foguete.svg') }}" alt="Logo Foguete" class="logo">
             <span>Oportunidades</span>
         </div>
-        
+
         <ul class="navegacao">
             <li><a href="#">Vagas</a></li>
             <li><a href="#">Cursos</a></li>
             <li><a href="#">Projetos</a></li>
             <li><a href="#">Dashboard</a></li>
         </ul>
-        
+
         <div class="menu-direita">
             <a href="#" class="btn-entrar">
                 <img src="{{asset('img/icone-entrar.svg')}}" alt="Ícone Entrar">
                 <span>Entrar</span>
             </a>
-            
+
             <button class="hamburger">&#9776;</button>
         </div>
     </nav>
@@ -38,7 +38,15 @@
     </main>
 
     <footer>
+        <div class="container">
+            <img src="{{asset('img/logo-foguete.svg')}}" alt="" class="logo-footer">
 
+            <span>Plataforma de oportunidades gratuita - 2026</span>
+            <div class="contatos">
+                <a href="#"><img src="{{asset('img/instagram-icon.svg')}}" alt=""></a>
+                <a href="#"><img src="{{asset('img/whatsapp-icon.svg')}}" alt=""></a>
+            </div>
+        </div>
     </footer>
 </body>
 
