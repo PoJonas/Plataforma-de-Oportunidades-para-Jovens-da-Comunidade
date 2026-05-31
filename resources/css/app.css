@@ -1,16 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 0.1rem;
 }
-
 :root {
     --cor-fundo: #0f1b2d;
     --verdizinho: #00c48c;
+    --verdizinho-escuro:#0ca076;
 }
 
-/* Footer e Nav (INICIO) */
 .nav-bar {
     background-color: var(--cor-fundo);
     display: flex;
@@ -177,71 +180,4 @@ footer {
         transform: none;
         width: auto;
     }
-}
-
-/* Footer e Nav (FIM) */
-
-/* página de login */
-.container-login {
-    width: 90%;
-    padding: 50px;         
-    max-width: 400px;     
-    margin: 50px auto;
-    flex-direction: column;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.usuario {
-    position: relative;
-    margin-top: 20px;
-}
-
-.usuario input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 1rem;
-    font-size: 13px;
-}
-
-.usuario label {
-    font-size: 14px;
-}
-
-.senha label {
-    font-size: 14px;
-}
-
-.senha {
-    position: relative;
-    margin-top: 20px;
-}
-
-.senha input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 1rem;
-    font-size: 13px;
-}
-.btn-login-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.btn-login {
-    margin-top: 20px;
-    padding: 0.5rem;
-    border-radius: 1rem;
-    background-color: var(--verdizinho);
-    color: #ffffff;
-    border: none;
-    transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-        border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-        transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.btn-login:hover {
-    transform: translateY(-4px);
 }
