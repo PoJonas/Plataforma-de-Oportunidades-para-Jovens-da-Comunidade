@@ -1,7 +1,7 @@
 body {
     min-height: 100vh;
     position: relative;
-    background: linear-gradient(135deg, #0f1b2d 0%, #0d2a1f 40%, #00c48c 100%);
+    background: linear-gradient(135deg, var(--azul-claro) 0%, var(--azul) 50%, var(--azul-escuro) 100%);
     background-size: 400% 400%;
     animation: mover 8s ease infinite;
 }
@@ -11,129 +11,91 @@ body {
     50%  { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 56px - 80px); 
+}
+
 .container-login {
-    width: 90%;
-    padding: 50px;
+    width: 100%;
     max-width: 400px;
+    margin: 40px auto; 
+    padding: 40px;
     border-radius: 20px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(255,255,255,0.06);
+    
+    background: rgba(36, 60, 76, 0.85); 
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255,255,255,0.1);
-    box-shadow: 0 24px 48px rgba(0,0,0,0.3);
+    border: 1px solid rgba(244, 252, 251, 0.15);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4);
 }
 
-.usuario {
-    position: relative;
-    margin-top: 20px;
-}
-
-.usuario input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 1rem;
-    font-size: 13px;
-    font-family: sans-serif;
-}
-
-.usuario label {
-    font-size: 14px;
-}
-
-.senha label {
-    font-size: 14px;
-}
-
-.senha {
-    position: relative;
-    margin-top: 20px;
-}
-
-.senha input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 1rem;
-    font-size: 13px;
-    font-family: sans-serif;
-}
-.btn-login-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
- 
-}
-.btn-login {
-    margin-top: 20px;
-    padding: 0.5rem;
-    border-radius: 1rem;
-    background-color: var(--verdizinho);
-    color: #ffffff;
-    border: none;
-    padding-left: 30px;
-    padding-right: 30px;
-    transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-        border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-        transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    cursor: pointer;
-}
-input:focus {
-    outline: none;
-}
-.btn-login:hover {
-    transform: translateY(-4px);
-    background-color: var(--verdizinho-escuro);
-}
-.bem-vindo{
+.bem-vindo {
     color: #ffffff;
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
-}
-.bem-vindo h4{
-    font-size: 30px;
-}
-.bem-vindo img{
-    margin-bottom: 2rem;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 30px;
 }
 
-.esqueciSenha{
-    font-size: 14px;
-    color: var(--verdizinho);
-    padding-top: 1rem;
-    text-decoration: none;
-    transition: transform 0.3s ease;
+.bem-vindo img {
+    width: 45px;
+    margin-bottom: 16px;
 }
-.esqueciSenha:hover{
-    color: var(--verdizinho-escuro);
-    transform: scale(1.05);
+
+.bem-vindo h4 {
+    font-size: 28px;
+    margin-bottom: 4px;
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 0.1rem;
+}
+
+.bem-vindo span {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .usuario,
 .senha {
     position: relative;
-    margin-top: 28px; 
+    margin-bottom: 24px;
+}
+
+.usuario input,
+.senha input {
+    width: 100%;
+    padding: 14px;
+    background: transparent; 
+    border: 1px solid rgba(255, 255, 255, 0.3); 
+    border-bottom-left-radius: 12px;
+    color: #ffffff;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    border: none;
+    border-bottom: 2px solid #ffffff;
+}
+
+.usuario input:focus,
+.senha input:focus {
+    border-color: var(--azul);
 }
 
 .usuario label,
 .senha label {
     position: absolute;
+    left: 14px;
     top: 50%;
-    left: 12px;
     transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.6);
     font-size: 15px;
-    color: #aaa;
     pointer-events: none;
-    transition: all 0.2s ease;
-    background-color: transparent; 
-    padding: 0 4px;
+    transition: all 0.3s ease;
+    padding: 0 6px;
 }
 
 .usuario input:focus + label,
@@ -141,24 +103,70 @@ input:focus {
 .senha input:focus + label,
 .senha input:not(:placeholder-shown) + label {
     top: 0;
-    font-size: 15px;
-    color: #00c48c;
-    background-color: transparent;
+    font-size: 13px;
+    color: var(--azul);
+    background-color: transparent; 
+    border-radius: 4px;
 }
 
-.cadastrar{
+
+.btn-login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.btn-login {
+    width: 100%; 
+    padding: 14px;
+    border-radius: 12px;
+    background-color: var(--azul-escuro);
+    color: #ffffff;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.05rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-login:hover {
+    transform: translateY(-2px);
+    background-color: var(--azul);
+    box-shadow: 0 4px 15px rgba(82, 137, 173, 0.4);
+}
+
+.esqueciSenha {
+    margin-top: 16px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.esqueciSenha:hover {
+    color: var(--azul);
+}
+
+.cadastrar {
     margin-top: 30px;
     text-align: center;
+    font-size: 14px;
 }
 
-.cadastrar a{
+.cadastrar span {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.cadastrar a {
+    color: var(--azul);
     text-decoration: none;
-    color: var(--verdizinho);
-    transition: transform 0.3s ease;
+    font-weight: bold;
+    margin-left: 4px;
+    transition: color 0.3s ease;
 }
-.cadastrar a:hover{
-    transform: scale(1.05);
-}
-.cadastrar span{
+
+.cadastrar a:hover {
     color: #ffffff;
 }

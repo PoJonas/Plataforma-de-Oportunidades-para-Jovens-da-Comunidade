@@ -8,10 +8,12 @@
     font-family: "Bebas Neue", sans-serif;
     letter-spacing: 0.1rem;
 }
+
 :root {
-    --cor-fundo: #0f1b2d;
-    --verdizinho: #00c48c;
-    --verdizinho-escuro:#0ca076;
+    --cor-fundo: #243C4C;
+    --azul: #5289AD;
+    --azul-escuro: #3f7290;
+    --azul-claro: #ACBCBF;
 }
 
 .nav-bar {
@@ -31,9 +33,12 @@
     min-width: 0;
 }
 
-.oportunidades>span {
-    color: var(--verdizinho);
-    font-weight: 500;
+.oportunidades a {
+    text-decoration: none;
+    color: var(--azul);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .navegacao {
@@ -61,8 +66,8 @@
 }
 
 .navegacao a:hover {
-    color: #1dd9a0;
-    border-bottom-color: #1dd9a0;
+    color: var(--azul);
+    border-bottom-color: var(--azul);
     transform: translateY(-4px);
 }
 
@@ -80,7 +85,7 @@
 .btn-entrar {
     display: flex;
     align-items: center;
-    background-color: var(--verdizinho);
+    background-color: var(--azul);
     padding: 0.4rem 0.8rem;
     border-radius: 0.5rem;
     gap: 12px;
@@ -104,14 +109,45 @@
     font-size: 14px;
 }
 
+.btn-cadastrar {
+    text-decoration: none;
+    color: var(--azul);
+    background-color: #ffffff;
+    padding: 0.3rem 0.7rem;
+    border-radius: 0.5rem;
+    gap: 10px;
+    transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-cadastrar:hover {
+    transform: translateY(-4px);
+}
+
+/* Hamburguer */
 .hamburger {
     display: none;
+    flex-direction: column;
+    gap: 5px;
     background: none;
     border: none;
-    color: #ffffff;
-    font-size: 24px;
     cursor: pointer;
+    padding: 4px;
 }
+
+.hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.hamburger.ativo span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.ativo span:nth-child(2) { opacity: 0; }
+.hamburger.ativo span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 footer {
     background-color: var(--cor-fundo);
@@ -159,12 +195,38 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .navegacao {
+    .hamburger {
+        display: flex;
+    }
+
+    .btn-desktop {
         display: none;
     }
 
-    .hamburger {
+    .navegacao {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 56px;
+        left: 0;
+        width: 100%;
+        background: var(--cor-fundo);
+        padding: 1rem 0;
+        z-index: 100;
+        /* reseta o centralizado do desktop */
+        transform: none;
+    }
+
+    .navegacao.aberto {
         display: flex;
+    }
+
+    .navegacao li {
+        padding: 0.75rem 1.5rem;
+    }
+
+    .nav-mobile-extra {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .container {
@@ -179,5 +241,11 @@ footer {
         position: static;
         transform: none;
         width: auto;
+    }
+}
+
+@media (min-width: 769px) {
+    .nav-mobile-extra {
+        display: none;
     }
 }

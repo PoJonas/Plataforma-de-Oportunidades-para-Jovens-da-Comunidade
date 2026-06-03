@@ -12,8 +12,8 @@ require __DIR__.'/settings.php';
 
 Route::get('/', function(){
     return view('base.layout');
-});
+})->name('principal');
 
 Route::get('/login', function(){
     return view('login.login');
-});
+})->name('login');

@@ -1,24 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('base.layout')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>login</title>
-    @vite(['resources/css/app.css', 'resources/css/login.css', 'resources/js/app.js'])
-</head>
+@section('title', 'Login')
 
-<body>
+@push('styles')
+    @vite(['resources/css/login.css'])
+@endpush
 
+@section('content')
     <div class="container-login">
         <div class="bem-vindo">
-            <img src="{{ asset('img/logo-foguete sem fundo.svg') }}" alt="">
+            <img src="{{ asset('img/foguete_branco.svg') }}" alt="">
             <h4>Bem-vindo de volta</h4>
             <span>Acesse sua conta para continuar</span>
         </div>
-        <form action="">
 
+        <form action="">
             <div class="usuario">
                 <input type="text" name="usuario" id="usuario" required placeholder="">
                 <label for="usuario">Email</label>
@@ -31,16 +27,13 @@
 
             <div class="btn-login-container">
                 <button type="submit" class="btn-login">Entrar</button>
-
                 <a href="#" class="esqueciSenha">Esqueci a senha</a>
             </div>
-
         </form>
+
         <div class="cadastrar">
             <span>Não tem conta?</span>
             <a href="#">Cadastre-se</a>
         </div>
     </div>
-</body>
-
-</html>
+@endsection
