@@ -1,0 +1,177 @@
+.section-inicial {
+    background-color: var(--cor-fundo);
+}
+
+.section-inicial {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.work-white,
+.book-white,
+.foguete-section {
+    width: 20px;
+}
+
+.conectar {
+    background-color: var(--azul);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    padding: 0.4rem;
+    padding-right: 10px;
+}
+
+.conectar span {
+    display: flex;
+    color: var(--cor-fundo);
+}
+
+.futuro {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.seu-futuro,
+.comeca {
+    font-size: 60px;
+    margin: -0.4rem;
+}
+
+.comeca {
+    color: var(--azul);
+}
+
+.seu-futuro {
+    color: #ffff;
+}
+
+.span-texto {
+    color: var(--azul);
+    margin-bottom: 2rem;
+    font-size: 17px;
+    text-align: center;   
+    padding: 0 20px;      
+    max-width: 800px;     
+    line-height: 1.5;
+}
+
+.btn-home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* Parte dos botões de vagas e cursos */
+.btn-vagas {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 10px 20px;
+    background-color: var(--azul);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 1;
+    transition: color 0.3s ease;
+    border: none;
+}
+/* inicio animação */
+.btn-vagas::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.15);
+    z-index: -1;
+    transition: top 0.4s cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+
+.btn-vagas:hover {
+    color: #ffffff;
+}
+
+.btn-vagas:hover::before {
+    top: 0;
+}
+/* fim animação */
+
+.btn-cursos {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 10px 20px;
+    background-color: transparent;
+    border: 1px solid #7c8da9;
+    border-radius: 8px;
+    color: #ffffff;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 1;
+    transition: color 0.3s ease;
+}
+
+/* inicio animação */
+.btn-cursos::before,
+.btn-cursos::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) scaleY(1) scaleX(1.25);
+    top: 100%;
+    width: 140%;
+    height: 180%;
+    border-radius: 50%;
+    display: block;
+    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+    z-index: -1;
+}
+
+.btn-cursos::after {
+    background-color: var(--azul);
+}
+
+.btn-cursos:hover {
+    color: #ffffff;
+    border: 1px solid var(--azul);
+}
+
+.btn-cursos:hover::before,
+.btn-cursos:hover::after {
+    top: -35%;
+    background-color: var(--azul);
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+/* fim animação */
+
+/* responsividade */
+
+@media (max-width: 768px) {
+    .seu-futuro,
+    .comeca {
+        font-size: 40px;
+        text-align: center;
+    }
+    
+    .btn-home {
+        flex-direction: column; 
+        gap: 15px;
+    }
+}

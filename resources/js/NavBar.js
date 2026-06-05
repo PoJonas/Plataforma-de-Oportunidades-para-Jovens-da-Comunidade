@@ -1,19 +1,13 @@
-console.log('navbar.js carregado');
-
-window.addEventListener('load', () => {
-    console.log('window load disparou');
+document.addEventListener('DOMContentLoaded', () => {
 
     const hamburger = document.querySelector('.hamburger');
     const navegacao = document.querySelector('.navegacao');
 
-    console.log('hamburger:', hamburger);
-    console.log('navegacao:', navegacao);
+    // se o elemento 'hamburger' realmente existir na página, evitando erros de console
+    hamburger?.addEventListener('click', () => {
 
-    if (!hamburger || !navegacao) return;
-
-    hamburger.addEventListener('click', () => {
-        console.log('clicou no hamburger');
         hamburger.classList.toggle('ativo');
+        // Esta classe é a responsável por mudar o display: none para flex no CSS.
         navegacao.classList.toggle('aberto');
     });
 });
