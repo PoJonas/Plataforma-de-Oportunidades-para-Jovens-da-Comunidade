@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- Central heart -->
+  <path d="M100 148 C100 148 44 114 44 76 C44 58 58 44 76 44 C88 44 98 52 100 60 C102 52 112 44 124 44 C142 44 156 58 156 76 C156 114 100 148 100 148 Z" stroke="white" stroke-width="4" stroke-linejoin="round" fill="white" fill-opacity="0.12"/>
+  <!-- People/community figures -->
+  <!-- Left person -->
+  <circle cx="56" cy="88" r="10" stroke="white" stroke-width="3" fill="none"/>
+  <path d="M38 120 C38 108 48 102 56 102 C64 102 74 108 74 120" stroke="white" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <!-- Right person -->
+  <circle cx="144" cy="88" r="10" stroke="white" stroke-width="3" fill="none"/>
+  <path d="M126 120 C126 108 136 102 144 102 C152 102 162 108 162 120" stroke="white" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <!-- Center person (larger, foreground) -->
+  <circle cx="100" cy="82" r="12" stroke="white" stroke-width="3.5" fill="white" fill-opacity="0.15"/>
+  <path d="M78 118 C78 104 90 97 100 97 C110 97 122 104 122 118" stroke="white" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+  <!-- Connecting hands / link lines -->
+  <line x1="66" y1="107" x2="80" y2="107" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="4 3"/>
+  <line x1="120" y1="107" x2="134" y2="107" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="4 3"/>
+</svg>

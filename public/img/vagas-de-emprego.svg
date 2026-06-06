@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- Briefcase body -->
+  <rect x="30" y="80" width="140" height="96" rx="10" stroke="white" stroke-width="4" fill="white" fill-opacity="0.1"/>
+  <!-- Briefcase top handle -->
+  <path d="M74 80 L74 64 C74 56 82 50 100 50 C118 50 126 56 126 64 L126 80" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Center clasp / band -->
+  <line x1="30" y1="118" x2="170" y2="118" stroke="white" stroke-width="4"/>
+  <!-- Clasp buckle -->
+  <rect x="88" y="108" width="24" height="20" rx="5" stroke="white" stroke-width="3.5" fill="white" fill-opacity="0.15"/>
+  <!-- Tie detail inside briefcase (decorative) -->
+  <line x1="100" y1="130" x2="100" y2="158" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="5 4"/>
+  <!-- Left pocket lines -->
+  <line x1="46" y1="142" x2="70" y2="142" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="46" y1="154" x2="64" y2="154" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Right pocket lines -->
+  <line x1="130" y1="142" x2="154" y2="142" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="136" y1="154" x2="154" y2="154" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

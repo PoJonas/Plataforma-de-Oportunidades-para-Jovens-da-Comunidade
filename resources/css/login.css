@@ -1,9 +1,13 @@
 body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
     min-height: 100vh;
     position: relative;
     background: linear-gradient(135deg, var(--azul-claro) 0%, var(--azul) 50%, var(--azul-escuro) 100%);
     background-size: 400% 400%;
     animation: mover 8s ease infinite;
+    
 }
 
 @keyframes mover {
@@ -16,8 +20,10 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: calc(100vh - 56px - 80px); 
+    flex: 1;
 }
+
+
 
 .container-login {
     width: 100%;
@@ -32,7 +38,12 @@ main {
     border: 1px solid rgba(244, 252, 251, 0.15);
     box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4);
 }
-
+@media (max-width: 768px) {
+    .container-login{
+        margin-top: 8rem;
+        margin-bottom: 5rem;
+    }
+}
 .bem-vindo {
     color: #ffffff;
     display: flex;

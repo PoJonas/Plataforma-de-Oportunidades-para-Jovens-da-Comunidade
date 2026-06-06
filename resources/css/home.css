@@ -1,12 +1,21 @@
 .section-inicial {
     background-color: var(--cor-fundo);
+    height: 55vh;
 }
 
 .section-inicial {
+    margin-top: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+
+@media (max-width: 768px) {
+    .section-inicial {
+        height: 70vh;
+    }
 }
 
 .work-white,
@@ -21,11 +30,20 @@
     align-items: center;
     justify-content: center;
     border-radius: 2rem;
-    margin-top: 3rem;
+    margin-top: 1rem;
     margin-bottom: 1.5rem;
     padding: 0.4rem;
     padding-right: 10px;
 }
+
+@media (max-width: 768px) {
+    .conectar {
+        padding: 1rem;
+        margin-right: 12px;
+        margin-left: 12px;
+    }
+}
+
 
 .conectar span {
     display: flex;
@@ -56,9 +74,9 @@
     color: var(--azul);
     margin-bottom: 2rem;
     font-size: 17px;
-    text-align: center;   
-    padding: 0 20px;      
-    max-width: 800px;     
+    text-align: center;
+    padding: 0 20px;
+    max-width: 800px;
     line-height: 1.5;
 }
 
@@ -87,6 +105,7 @@
     transition: color 0.3s ease;
     border: none;
 }
+
 /* inicio animação */
 .btn-vagas::before {
     content: "";
@@ -108,6 +127,7 @@
 .btn-vagas:hover::before {
     top: 0;
 }
+
 /* fim animação */
 
 .btn-cursos {
@@ -159,19 +179,209 @@
     background-color: var(--azul);
     transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
 }
+
 /* fim animação */
 
 /* responsividade */
 
 @media (max-width: 768px) {
+
     .seu-futuro,
     .comeca {
         font-size: 40px;
         text-align: center;
     }
-    
+
     .btn-home {
-        flex-direction: column; 
+        flex-direction: column;
         gap: 15px;
+    }
+}
+
+/* outra section */
+
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100px;
+    width: 100%;
+
+}
+
+/* 2. O contêiner da barra de pesquisa */
+.search-box {
+    background: var(--azul);
+    height: 50px;
+    border-radius: 50px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+/* 3. O campo de texto */
+.search-txt {
+    border: none;
+    background: none;
+    outline: none;
+    padding: 0;
+    color: #f1f1f1;
+    font-size: 16px;
+    transition: width 0.4s ease, padding 0.4s ease;
+    width: 0;
+    /* Começa escondido */
+}
+
+.search-txt::placeholder {
+    color: #f1f1f1;
+    font-size: 13px;
+}
+
+.search-button {
+    color: #FF4654;
+    /* Essa cor vai pintar o seu ícone do FontAwesome! */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--azul);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.4s ease;
+    flex-shrink: 0;
+    text-decoration: none;
+}
+
+.search-box:hover .search-txt {
+    width: 300px;
+    padding: 0 15px;
+}
+
+.search-box:hover .search-button {
+    background: #f1f1f1;
+}
+
+.search-button img {
+    width: 25px;
+}
+
+/* section oportunidades */
+
+.container-oportunidades {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 20px;
+}
+
+
+@media (max-width: 768px) {
+    .container-oportunidades {
+        display: block;
+    }
+}
+
+.card {
+    background-color: var(--cor-fundo);
+    color: #f1f1f1;
+    height: 150px;
+    margin-bottom: 2rem;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 2rem;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.card img {
+    width: 30px;
+}
+
+.link-estendido::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.card:hover {
+    box-shadow: 0 10px 30px rgba(var(--azul-rgb), 0.2);
+    transform: translateY(-2px);
+}
+
+/* Animação do SPAN */
+.card span {
+    transition: transform 0.4s ease;
+}
+
+.card:hover span {
+    transform: translateY(-3px);
+    color: var(--azul);
+}
+
+/* section tem vaga? */
+
+.tem-vaga-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; 
+    min-height: 30vh; 
+}
+
+.tem-vaga {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 800px;
+    max-height: 400px;
+    padding: 20px;
+    border-radius: 2rem;
+    background-color: var(--cor-fundo);
+    color: #f1f1f1;
+
+}
+.tem-vaga h2{
+    font-size: 32px;
+}
+.tem-vaga span {
+    margin: 0.6rem;
+    font-size: 15px;
+    text-align: center;
+    padding: 0 20px;
+    max-width: 800px;
+    line-height: 1.5;
+}
+
+.tem-vaga a{
+    background-color: var(--azul);
+    color: #f1f1f1;
+    padding: 0.5rem 2rem 0.5rem;
+    border-radius: 1rem;
+    text-decoration: none;
+    transition: all ease-in-out 300ms;
+}
+
+.tem-vaga a:hover{
+    box-shadow: 0px 37px 20px -20px rgba(0,0,0,0.2);
+    transform: translate(0px, -2px) scale(1.05);
+}
+
+@media (max-width: 480px) {
+    .tem-vaga h2 {
+        font-size: 24px; 
     }
 }

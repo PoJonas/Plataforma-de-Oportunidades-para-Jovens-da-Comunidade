@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- Graduation cap -->
+  <path d="M100 50 L160 78 L100 106 L40 78 Z" stroke="white" stroke-width="4" stroke-linejoin="round" fill="white" fill-opacity="0.1"/>
+  <path d="M60 90 L60 130 C60 130 80 148 100 148 C120 148 140 130 140 130 L140 90" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <line x1="160" y1="78" x2="160" y2="110" stroke="white" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="160" cy="116" r="6" fill="white"/>
+  <!-- Diploma lines -->
+  <line x1="80" y1="162" x2="120" y2="162" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <line x1="88" y1="172" x2="112" y2="172" stroke="white" stroke-width="3" stroke-linecap="round"/>
+</svg>
