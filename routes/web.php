@@ -13,7 +13,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
 require __DIR__ . '/settings.php';
 
 
-// Rotas iniciais
 Route::get('/', function () {
     return view('pages.home'); })->name('principal');
 Route::get('/login', [LoginController::class, 'getLogin'])->name('login');

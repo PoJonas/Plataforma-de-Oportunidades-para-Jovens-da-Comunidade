@@ -12,7 +12,6 @@ class Usuario extends Authenticatable
 
     // Nome da sua tabela própria
     protected $table = 'usuarios'; 
-
     // Campos liberados para preenchimento
     protected $fillable = [
     'nome', 'cpf_cnpj', 'email', 'senha', 'telefone', 

@@ -4,16 +4,6 @@ body {
     margin: 0;
     min-height: 100vh;
     position: relative;
-    background: linear-gradient(135deg, var(--azul-claro) 0%, var(--azul) 50%, var(--azul-escuro) 100%);
-    background-size: 400% 400%;
-    animation: mover 8s ease infinite;
-    
-}
-
-@keyframes mover {
-    0%   { background-position: 0% 50%; }
-    50%  { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
 }
 
 main {
@@ -21,60 +11,43 @@ main {
     justify-content: center;
     align-items: center;
     flex: 1;
+    background-color: #f4fcfb;
 }
 
-
-
-.container-login {
+.container-cadastro{
     width: 100%;
     max-width: 400px;
     margin: 40px auto; 
     padding: 40px;
-    border-radius: 20px;
-    
+    border-radius: 7px;
     background: rgba(36, 60, 76, 0.85); 
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgba(244, 252, 251, 0.15);
     box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4);
+
+}
+
+.cadastro-txt{
+    color: #ffffff;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
 }
 @media (max-width: 768px) {
-    .container-login{
-        margin-top: 8rem;
-        margin-bottom: 5rem;
+    .container-cadastro{
+        margin: 8rem 1rem 5rem;
     }
-}
-.bem-vindo {
-    color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.bem-vindo img {
-    width: 45px;
-    margin-bottom: 16px;
-}
-
-.bem-vindo h4 {
-    font-size: 28px;
-    margin-bottom: 4px;
-    font-family: "Bebas Neue", sans-serif;
-    letter-spacing: 0.1rem;
-}
-
-.bem-vindo span {
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.7);
 }
 
 .usuario, 
 .email,
 .senha,
 .nome,
-.cpf_cnpj,
+.identificacao,
 .telefone {
     position: relative;
     margin-bottom: 24px;
@@ -84,7 +57,7 @@ main {
 .email input,
 .senha input,
 .nome input,
-.cpf_cnpj input,
+.identificacao input,
 .telefone input {
     width: 100%;
     padding: 14px;
@@ -103,7 +76,7 @@ main {
 .email input:focus,
 .senha input:focus,
 .nome input:focus,
-.cpf_cnpj input:focus,
+.identificacao input:focus,
 .telefone input:focus {
     border-color: var(--azul);
 }
@@ -112,7 +85,7 @@ main {
 .email label,
 .senha label,
 .nome label,
-.cpf_cnpj label,
+.identificacao label,
 .telefone label {
     position: absolute;
     left: 14px;
@@ -133,13 +106,13 @@ main {
 .senha input:not(:placeholder-shown) + label,
 .nome input:focus + label,
 .nome input:not(:placeholder-shown) + label,
-.cpf_cnpj input:focus + label,
-.cpf_cnpj input:not(:placeholder-shown) + label,
+.identificacao input:focus + label,
+.identificacao input:not(:placeholder-shown) + label,
 .telefone input:focus + label,
 .telefone input:not(:placeholder-shown) + label {
     top: 0;
     font-size: 13px;
-    color: var(--azul);
+    color: #ffffff;
     background-color: transparent; 
     border-radius: 4px;
 }
@@ -152,7 +125,7 @@ main {
     margin-top: 10px;
 }
 
-.btn-login {
+.btn-cadastro{
     width: 100%; 
     padding: 14px;
     border-radius: 12px;
@@ -166,42 +139,24 @@ main {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.btn-login:hover {
+.btn-cadastro:hover {
     transform: translateY(-2px);
     background-color: var(--azul);
     box-shadow: 0 4px 15px rgba(82, 137, 173, 0.4);
 }
 
-.esqueciSenha {
-    margin-top: 16px;
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.7);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.esqueciSenha:hover {
-    color: var(--azul);
-}
-
-.cadastrar {
-    margin-top: 30px;
-    text-align: center;
-    font-size: 14px;
-}
-
-.cadastrar span {
-    color: rgba(255, 255, 255, 0.7);
-}
-
-.cadastrar a {
-    color: var(--azul);
-    text-decoration: none;
-    font-weight: bold;
-    margin-left: 4px;
-    transition: color 0.3s ease;
-}
-
-.cadastrar a:hover {
+.redirect_login{
     color: #ffffff;
+    text-align: center;
+    margin-top: 2rem;
+    text-decoration: none;
+}
+
+.redirect_login a{
+    color: var(--azul);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.redirect_login a:hover{
+    color: rgba(255, 255, 255, 0.6);
 }

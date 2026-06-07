@@ -4,34 +4,24 @@ body {
     margin: 0;
     min-height: 100vh;
     position: relative;
-    background: linear-gradient(135deg, var(--azul-claro) 0%, var(--azul) 50%, var(--azul-escuro) 100%);
-    background-size: 400% 400%;
-    animation: mover 8s ease infinite;
-    
+    overflow: hidden;
 }
 
-@keyframes mover {
-    0%   { background-position: 0% 50%; }
-    50%  { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
 
 main {
     display: flex;
     justify-content: center;
     align-items: center;
     flex: 1;
+    background-color: #f4fcfb;
 }
-
-
 
 .container-login {
     width: 100%;
     max-width: 400px;
     margin: 40px auto; 
     padding: 40px;
-    border-radius: 20px;
-    
+    border-radius: 7px;
     background: rgba(36, 60, 76, 0.85); 
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
@@ -44,6 +34,7 @@ main {
         margin-bottom: 5rem;
     }
 }
+
 .bem-vindo {
     color: #ffffff;
     display: flex;
