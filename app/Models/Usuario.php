@@ -2,12 +2,10 @@
 
 namespace App\Models;
 
-// 1. IMPORTANTE: Remova o 'use Illuminate\Database\Eloquent\Model;' se ele existir
-// 2. ADICIONE este use abaixo para habilitar os recursos de autenticação:
 use Illuminate\Foundation\Auth\User as Authenticatable; 
 use Illuminate\Notifications\Notifiable;
 
-// 3. Mude a classe para estender 'Authenticatable' em vez de 'Model'
+
 class Usuario extends Authenticatable 
 {
     use Notifiable;
@@ -31,5 +29,9 @@ class Usuario extends Authenticatable
         return [
             'senha' => 'hashed',
         ];
+    }
+    public function getAuthPassword()
+    {
+        return $this->senha;
     }
 }
