@@ -14,7 +14,8 @@ require __DIR__.'/settings.php';
 
 Route::get('/', function(){return view('pages.home');})->name('principal');
 Route::get('/login', [LoginController::class, 'getLogin'])->name('login');
-Route::post('/login', [LoginController::class, 'postLogin'])->name('login');
+Route::post('/login', [LoginController::class, 'postLogin'])->name('auth');
+Route::get('/dashboard', function(){return 'ola';})->name('');
 
 Route::get('/cadastro', [CadastroController::class, 'Cadastrar'])->name('cadastro');
 Route::post('/cadastro', [CadastroController::class, 'realizarCadastro'])->name('cadastro');

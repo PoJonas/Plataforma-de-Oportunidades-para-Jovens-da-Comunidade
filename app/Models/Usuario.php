@@ -2,12 +2,10 @@
 
 namespace App\Models;
 
-// 1. IMPORTANTE: Remova o 'use Illuminate\Database\Eloquent\Model;' se ele existir
-// 2. ADICIONE este use abaixo para habilitar os recursos de autenticação:
 use Illuminate\Foundation\Auth\User as Authenticatable; 
 use Illuminate\Notifications\Notifiable;
 
-// 3. Mude a classe para estender 'Authenticatable' em vez de 'Model'
+
 class Usuario extends Authenticatable 
 {
     use Notifiable;
@@ -17,11 +15,7 @@ class Usuario extends Authenticatable
 
     // Campos liberados para preenchimento
     protected $fillable = [
-    'nome',
-    'cpf_cnpj',
-    'email',
-    'password',
-    'telefone',
+    'nome', 'cpf_cnpj', 'email', 'senha', 'telefone', 
 ];
 
     protected $hidden = [
@@ -31,9 +25,13 @@ class Usuario extends Authenticatable
 
     // Diz ao Laravel que a senha está criptografada
     protected function casts(): array
-    {
+    {   
         return [
-            'password' => 'hashed',
+            'senha' => 'hashed',
         ];
+    }
+    public function getAuthPassword()
+    {
+        return $this->senha;
     }
 }
