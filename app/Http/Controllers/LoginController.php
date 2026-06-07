@@ -25,9 +25,9 @@ class LoginController extends Controller
             'password' => $dados['senha'],
         ];
 
-
         if (Auth::guard('usuarios')->attempt($credentials)) {
             $request->session()->regenerate();
+
             return redirect('dashboard');
         }
 

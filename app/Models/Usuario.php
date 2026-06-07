@@ -2,20 +2,20 @@
 
 namespace App\Models;
 
-use Illuminate\Foundation\Auth\User as Authenticatable; 
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-
-class Usuario extends Authenticatable 
+class Usuario extends Authenticatable
 {
     use Notifiable;
 
     // Nome da sua tabela própria
-    protected $table = 'usuarios'; 
+    protected $table = 'usuarios';
+
     // Campos liberados para preenchimento
     protected $fillable = [
-    'nome', 'cpf_cnpj', 'email', 'senha', 'telefone', 
-];
+        'nome', 'cpf_cnpj', 'email', 'senha', 'telefone',
+    ];
 
     protected $hidden = [
         'password',
@@ -24,11 +24,12 @@ class Usuario extends Authenticatable
 
     // Diz ao Laravel que a senha está criptografada
     protected function casts(): array
-    {   
+    {
         return [
             'senha' => 'hashed',
         ];
     }
+
     public function getAuthPassword()
     {
         return $this->senha;

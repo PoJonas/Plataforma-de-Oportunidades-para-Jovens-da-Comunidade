@@ -1,10 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-
     const hamburger = document.querySelector('.hamburger');
     const navegacao = document.querySelector('.navegacao');
 
     hamburger?.addEventListener('click', () => {
-
         hamburger.classList.toggle('ativo');
         // Esta classe é a responsável por mudar o display
         navegacao.classList.toggle('aberto');
@@ -20,4 +18,3 @@ window.addEventListener('scroll', () => {
         navbar.classList.remove('transparente');
     }
 });
-

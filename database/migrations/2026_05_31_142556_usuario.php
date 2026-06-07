@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('telefone')->nullable();
             $table->boolean('is_admin')->default(false);
             $table->dateTime('ultimo_acesso')->nullable();
-            $table->dateTime('deletado_at')->nullable();    
+            $table->dateTime('deletado_at')->nullable();
         });
     }
 

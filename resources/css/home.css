@@ -11,7 +11,6 @@
     flex-direction: column;
 }
 
-
 @media (max-width: 768px) {
     .section-inicial {
         height: 70vh;
@@ -43,7 +42,6 @@
         margin-left: 12px;
     }
 }
-
 
 .conectar span {
     display: flex;
@@ -108,7 +106,7 @@
 
 /* inicio animação */
 .btn-vagas::before {
-    content: "";
+    content: '';
     position: absolute;
     left: 0;
     top: 100%;
@@ -118,7 +116,6 @@
     z-index: -1;
     transition: top 0.4s cubic-bezier(0.55, 0, 0.1, 1);
 }
-
 
 .btn-vagas:hover {
     color: #ffffff;
@@ -151,7 +148,7 @@
 /* inicio animação */
 .btn-cursos::before,
 .btn-cursos::after {
-    content: "";
+    content: '';
     position: absolute;
     left: 50%;
     transform: translateX(-50%) scaleY(1) scaleX(1.25);
@@ -185,7 +182,6 @@
 /* responsividade */
 
 @media (max-width: 768px) {
-
     .seu-futuro,
     .comeca {
         font-size: 40px;
@@ -206,7 +202,6 @@
     align-items: center;
     min-height: 100px;
     width: 100%;
-
 }
 
 /* 2. O contêiner da barra de pesquisa */
@@ -228,7 +223,9 @@
     padding: 0;
     color: #f1f1f1;
     font-size: 16px;
-    transition: width 0.4s ease, padding 0.4s ease;
+    transition:
+        width 0.4s ease,
+        padding 0.4s ease;
     width: 0;
     /* Começa escondido */
 }
@@ -239,7 +236,7 @@
 }
 
 .search-button {
-    color: #FF4654;
+    color: #ff4654;
     /* Essa cor vai pintar o seu ícone do FontAwesome! */
     width: 40px;
     height: 40px;
@@ -278,7 +275,6 @@
     padding: 0 20px;
 }
 
-
 @media (max-width: 768px) {
     .container-oportunidades {
         display: block;
@@ -305,7 +301,7 @@
 }
 
 .link-estendido::after {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -334,8 +330,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px; 
-    min-height: 30vh; 
+    padding: 20px;
+    min-height: 30vh;
 }
 
 .tem-vaga {
@@ -352,9 +348,8 @@
     border-radius: 2rem;
     background-color: var(--cor-fundo);
     color: #f1f1f1;
-
 }
-.tem-vaga h2{
+.tem-vaga h2 {
     font-size: 32px;
 }
 .tem-vaga span {
@@ -366,7 +361,7 @@
     line-height: 1.5;
 }
 
-.tem-vaga a{
+.tem-vaga a {
     background-color: var(--azul);
     color: #f1f1f1;
     padding: 0.5rem 2rem 0.5rem;
@@ -375,13 +370,13 @@
     transition: all ease-in-out 300ms;
 }
 
-.tem-vaga a:hover{
-    box-shadow: 0px 37px 20px -20px rgba(0,0,0,0.2);
+.tem-vaga a:hover {
+    box-shadow: 0px 37px 20px -20px rgba(0, 0, 0, 0.2);
     transform: translate(0px, -2px) scale(1.05);
 }
 
 @media (max-width: 480px) {
     .tem-vaga h2 {
-        font-size: 24px; 
+        font-size: 24px;
     }
 }

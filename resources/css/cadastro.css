@@ -14,21 +14,20 @@ main {
     background-color: #f4fcfb;
 }
 
-.container-cadastro{
+.container-cadastro {
     width: 100%;
     max-width: 400px;
-    margin: 40px auto; 
+    margin: 40px auto;
     padding: 40px;
     border-radius: 7px;
-    background: rgba(36, 60, 76, 0.85); 
+    background: rgba(36, 60, 76, 0.85);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgba(244, 252, 251, 0.15);
     box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4);
-
 }
 
-.cadastro-txt{
+.cadastro-txt {
     color: #ffffff;
     font-size: 2rem;
     display: flex;
@@ -38,12 +37,12 @@ main {
     gap: 20px;
 }
 @media (max-width: 768px) {
-    .container-cadastro{
+    .container-cadastro {
         margin: 8rem 1rem 5rem;
     }
 }
 
-.usuario, 
+.usuario,
 .email,
 .senha,
 .nome,
@@ -61,8 +60,8 @@ main {
 .telefone input {
     width: 100%;
     padding: 14px;
-    background: transparent; 
-    border: 1px solid rgba(255, 255, 255, 0.3); 
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-bottom-left-radius: 12px;
     color: #ffffff;
     font-size: 15px;
@@ -113,10 +112,9 @@ main {
     top: 0;
     font-size: 13px;
     color: #ffffff;
-    background-color: transparent; 
+    background-color: transparent;
     border-radius: 4px;
 }
-
 
 .btn-login-container {
     display: flex;
@@ -125,8 +123,8 @@ main {
     margin-top: 10px;
 }
 
-.btn-cadastro{
-    width: 100%; 
+.btn-cadastro {
+    width: 100%;
     padding: 14px;
     border-radius: 12px;
     background-color: var(--azul-escuro);
@@ -145,18 +143,18 @@ main {
     box-shadow: 0 4px 15px rgba(82, 137, 173, 0.4);
 }
 
-.redirect_login{
+.redirect_login {
     color: #ffffff;
     text-align: center;
     margin-top: 2rem;
     text-decoration: none;
 }
 
-.redirect_login a{
+.redirect_login a {
     color: var(--azul);
     text-decoration: none;
     transition: color 0.3s ease;
 }
-.redirect_login a:hover{
+.redirect_login a:hover {
     color: rgba(255, 255, 255, 0.6);
 }
