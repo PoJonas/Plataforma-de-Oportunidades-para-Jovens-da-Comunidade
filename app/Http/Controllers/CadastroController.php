@@ -14,21 +14,23 @@ class CadastroController extends Controller
 
     public function realizarCadastro(Request $request)
     {
-        $usuario = new Usuario();
+
         $request->validate([
+            'nome'=> 'required|string|max:255',
             'cpf_cnpj' => 'required|unique:usuarios',
             'email' => 'required|email|unique:usuarios',
-            'senha' => 'required',
+            'senha' => 'required|min:6',
             'telefone' => 'required',
         ]);
 
-        $usuario->nome = $request->input('nome');
-        $usuario->cpf_cnpj = $request->input('cpf_cnpj');
-        $usuario->email = $request->input('email');
-        $usuario->senha = bcrypt($request->input('senha'));
-        $usuario->telefone = $request->input('telefone');
-        $usuario->save();
+        Usuario::create([
+            'nome' => $request->input('nome'),
+            'cpf_cnpj' => $request->input('cpf_cnpj'),
+            'email'=> $request->input('email'),
+            'senha'=> bcrypt($request->input('senha')),
+            'telefone' => $request->input('telefone'),
+        ]);
 
-        return redirect()->route('login');
+        return redirect()->route('login')->with('success', 'Cadastro realizado com sucesso!');
     }
 }

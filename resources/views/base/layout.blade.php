@@ -48,7 +48,7 @@
     </nav>
 
     <main>
-        @yield('content_login')
+        @yield('content')
     </main>
 
     <footer>

@@ -6,7 +6,7 @@
     @vite(['resources/css/login.css'])
 @endpush
 
-@section('content_login')
+@section('content')
     <div class="container-login">
         <div class="bem-vindo">
             <img src="{{ asset('img/foguete_branco.svg') }}" alt="">
