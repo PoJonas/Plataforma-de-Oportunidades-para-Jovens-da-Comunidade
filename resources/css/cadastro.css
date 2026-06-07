@@ -72,14 +72,20 @@ main {
 
 .usuario, 
 .email,
-.senha {
+.senha,
+.nome,
+.cpf_cnpj,
+.telefone {
     position: relative;
     margin-bottom: 24px;
 }
 
 .usuario input,
 .email input,
-.senha input {
+.senha input,
+.nome input,
+.cpf_cnpj input,
+.telefone input {
     width: 100%;
     padding: 14px;
     background: transparent; 
@@ -95,13 +101,19 @@ main {
 
 .usuario input:focus,
 .email input:focus,
-.senha input:focus {
+.senha input:focus,
+.nome input:focus,
+.cpf_cnpj input:focus,
+.telefone input:focus {
     border-color: var(--azul);
 }
 
 .usuario label,
 .email label,
-.senha label {
+.senha label,
+.nome label,
+.cpf_cnpj label,
+.telefone label {
     position: absolute;
     left: 14px;
     top: 50%;
@@ -118,7 +130,13 @@ main {
 .email input:focus + label,
 .email input:not(:placeholder-shown) + label,
 .senha input:focus + label,
-.senha input:not(:placeholder-shown) + label {
+.senha input:not(:placeholder-shown) + label,
+.nome input:focus + label,
+.nome input:not(:placeholder-shown) + label,
+.cpf_cnpj input:focus + label,
+.cpf_cnpj input:not(:placeholder-shown) + label,
+.telefone input:focus + label,
+.telefone input:not(:placeholder-shown) + label {
     top: 0;
     font-size: 13px;
     color: var(--azul);

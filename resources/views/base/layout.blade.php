@@ -26,7 +26,7 @@
             <li><a href="#">Projetos</a></li>
             <li><a href="#">Dashboard</a></li>
             <li class="nav-mobile-extra"><a href="{{ route('login') }}">Entrar</a></li>
-            <li class="nav-mobile-extra"><a href="#">Cadastre-se</a></li>
+            <li class="nav-mobile-extra"><a href="{{ route('cadastro') }}">Cadastre-se</a></li>
         </ul>
 
         <div class="menu-direita">
@@ -35,7 +35,7 @@
                 <span>Entrar</span>
             </a>
 
-            <a href="#" class="btn-cadastrar btn-desktop">
+            <a href="{{ route('cadastro') }}" class="btn-cadastrar btn-desktop">
                 <span>Cadastre-se</span>
             </a>
 
@@ -48,7 +48,7 @@
     </nav>
 
     <main>
-        @yield('content')
+        @yield('content_login')
     </main>
 
     <footer>

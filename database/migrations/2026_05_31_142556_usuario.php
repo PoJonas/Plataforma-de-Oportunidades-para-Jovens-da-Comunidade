@@ -14,8 +14,16 @@ return new class extends Migration
         Schema::create('usuarios', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('nome');
             $table->string('email')->unique();
             $table->string('senha');
+            $table->string('cpf_cnpj')->unique();
+            $table->boolean('status')->default(true);
+            $table->boolean('email_verificado')->default(false)->nullable();
+            $table->string('telefone')->nullable();
+            $table->boolean('is_admin')->default(false);
+            $table->dateTime('ultimo_acesso')->nullable();
+            $table->dateTime('deletado_at')->nullable();    
         });
     }
 

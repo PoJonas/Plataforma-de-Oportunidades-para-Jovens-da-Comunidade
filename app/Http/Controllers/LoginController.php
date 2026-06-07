@@ -3,29 +3,38 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Usuario;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    public function realizarLogin(Request $request)
+    public function getLogin(Request $request)
     {
-
-        $request->all();
-        //@dd($request);
-
-        $usuario = new Usuario();
-        $usuario->email = $request->input('email');
-        $usuario->senha = $request->input('senha');
-        echo '<pre>';
-        echo '<br>';
-        echo '<br>';
-        echo '<br>';
-        echo '<br>';
-        echo '<br>';
-        echo '<br>';
-        print_r($usuario->getAttributes());
-        echo '</pre>';
-        $usuario->save();
         return view('login.login');
+    }
+
+    public function postLogin(Request $request)
+        {
+        // 1. Valida os dados exatamente como vêm do formulário HTML
+        $dados = $request->validate([
+            'email' => ['required', 'email'],
+            'senha' => ['required'],
+        ]);
+
+        // 2. Transforma a chave 'senha' em 'password' para o Laravel reconhecer o campo
+        $credentials = [
+            'email' => $dados['email'],
+            'password' => $dados['senha'],
+        ];
+
+        // 3. Tenta realizar o login usando o guard da sua tabela própria ('usuario_guard')
+        if (Auth::guard('usuarios')->attempt($credentials, $request->remember)) {
+            $request->session()->regenerate(); // Previne ataques de fixação de sessão
+            return redirect()->intended('principal');
+        }
+
+        // 4. Retorna erro se a autenticação falhar no banco
+        return back()->withErrors([
+            'email' => 'As credenciais informadas não correspondem aos nossos registros.',
+        ])->onlyInput('email');
     }
 }

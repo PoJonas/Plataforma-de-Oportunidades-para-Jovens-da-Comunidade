@@ -6,7 +6,7 @@
     @vite(['resources/css/login.css'])
 @endpush
 
-@section('content')
+@section('content_login')
     <div class="container-login">
         <div class="bem-vindo">
             <img src="{{ asset('img/foguete_branco.svg') }}" alt="">
@@ -14,10 +14,18 @@
             <span>Acesse sua conta para continuar</span>
         </div>
 
-        
+        @if ($errors->any())
+    <div style="color: red;">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
         <form action="{{ route('login') }}" method="POST">
             @csrf
-            <div class="usuario">
+            <div class="email">
                 <input type="text" name="email" id="email" required placeholder="">
                 <label for="email">Email</label>
             </div>
@@ -35,7 +43,7 @@
 
         <div class="cadastrar">
             <span>Não tem conta?</span>
-            <a href="#">Cadastre-se</a>
+            <a href="/cadastro">Cadastre-se</a>
         </div>
     </div>
 @endsection

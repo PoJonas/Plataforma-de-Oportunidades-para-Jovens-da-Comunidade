@@ -42,6 +42,10 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'usuarios' => [
+            'driver' => 'session',
+            'provider' => 'usuarios', // Aponta para o provider 'usuarios'
+],
     ],
 
     /*
@@ -66,6 +70,11 @@ return [
             'driver' => 'eloquent',
             'model' => env('AUTH_MODEL', User::class),
         ],
+
+    'usuarios' => [
+        'driver' => 'eloquent',
+        'model' => App\Models\Usuario::class,
+    ],
 
         // 'users' => [
         //     'driver' => 'database',
