@@ -4,16 +4,26 @@ body {
     margin: 0;
     min-height: 100vh;
     position: relative;
-    background: linear-gradient(135deg, var(--azul-claro) 0%, var(--azul) 50%, var(--azul-escuro) 100%);
+    background: linear-gradient(
+        135deg,
+        var(--azul-claro) 0%,
+        var(--azul) 50%,
+        var(--azul-escuro) 100%
+    );
     background-size: 400% 400%;
     animation: mover 8s ease infinite;
-    
 }
 
 @keyframes mover {
-    0%   { background-position: 0% 50%; }
-    50%  { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 main {
@@ -23,23 +33,21 @@ main {
     flex: 1;
 }
 
-
-
 .container-login {
     width: 100%;
     max-width: 400px;
-    margin: 40px auto; 
+    margin: 40px auto;
     padding: 40px;
     border-radius: 20px;
-    
-    background: rgba(36, 60, 76, 0.85); 
+
+    background: rgba(36, 60, 76, 0.85);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgba(244, 252, 251, 0.15);
     box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4);
 }
 @media (max-width: 768px) {
-    .container-login{
+    .container-login {
         margin-top: 8rem;
         margin-bottom: 5rem;
     }
@@ -61,7 +69,7 @@ main {
 .bem-vindo h4 {
     font-size: 28px;
     margin-bottom: 4px;
-    font-family: "Bebas Neue", sans-serif;
+    font-family: 'Bebas Neue', sans-serif;
     letter-spacing: 0.1rem;
 }
 
@@ -70,7 +78,7 @@ main {
     color: rgba(255, 255, 255, 0.7);
 }
 
-.usuario, 
+.usuario,
 .email,
 .senha {
     position: relative;
@@ -82,8 +90,8 @@ main {
 .senha input {
     width: 100%;
     padding: 14px;
-    background: transparent; 
-    border: 1px solid rgba(255, 255, 255, 0.3); 
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-bottom-left-radius: 12px;
     color: #ffffff;
     font-size: 15px;
@@ -122,10 +130,9 @@ main {
     top: 0;
     font-size: 13px;
     color: var(--azul);
-    background-color: transparent; 
+    background-color: transparent;
     border-radius: 4px;
 }
-
 
 .btn-login-container {
     display: flex;
@@ -135,7 +142,7 @@ main {
 }
 
 .btn-login {
-    width: 100%; 
+    width: 100%;
     padding: 14px;
     border-radius: 12px;
     background-color: var(--azul-escuro);

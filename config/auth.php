@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\User;
+use App\Models\Usuario;
 
 return [
 
@@ -45,7 +46,7 @@ return [
         'usuarios' => [
             'driver' => 'session',
             'provider' => 'usuarios', // Aponta para o provider 'usuarios'
-],
+        ],
     ],
 
     /*
@@ -71,10 +72,10 @@ return [
             'model' => env('AUTH_MODEL', User::class),
         ],
 
-    'usuarios' => [
-        'driver' => 'eloquent',
-        'model' => App\Models\Usuario::class,
-    ],
+        'usuarios' => [
+            'driver' => 'eloquent',
+            'model' => Usuario::class,
+        ],
 
         // 'users' => [
         //     'driver' => 'database',
