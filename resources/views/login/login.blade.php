@@ -14,10 +14,12 @@
             <span>Acesse sua conta para continuar</span>
         </div>
 
-        <form action="">
+        
+        <form action="{{ route('login') }}" method="POST">
+            @csrf
             <div class="usuario">
-                <input type="text" name="usuario" id="usuario" required placeholder="">
-                <label for="usuario">Email</label>
+                <input type="text" name="email" id="email" required placeholder="">
+                <label for="email">Email</label>
             </div>
 
             <div class="senha">

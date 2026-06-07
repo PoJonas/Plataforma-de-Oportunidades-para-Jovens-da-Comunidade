@@ -58,7 +58,7 @@
             </a>
             <span>Plataforma de oportunidades gratuita - 2026</span>
             <div class="contatos">
-                <a href="#"><img src="{{ asset('img/instagram-icon-branco.svg') }}" alt=""></a>
+                <a href="#" target="_blank"><img src="{{ asset('img/instagram-icon-branco.svg') }}" alt=""></a>
                 <a href="#"><img src="{{ asset('img/whatsapp-icon-branco.svg') }}" alt=""></a>
             </div>
         </div>
