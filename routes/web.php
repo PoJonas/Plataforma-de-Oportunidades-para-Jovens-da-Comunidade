@@ -20,18 +20,10 @@ Route::post('/login', [LoginController::class, 'postLogin'])->name('auth');
 
 // Rotas que apenas um usuário logado vai ter acesso
 Route::middleware(['auth'])->group(function () {
-    Route::get('/dashboard', function () {
-        return 'ola';
-    })->name('dashboard');
-    Route::get('/adicionarVaga', function () {
-        return view('');
-    })->name('adicionarVaga');
-    Route::get('/adicionarCurso', function () {
-        return view('');
-    })->name('adicionarCurso');
-    Route::get('/adicionarProjeto', function () {
-        return view('');
-    })->name('adicionarProjeto');
+Route::get('/dashboard', function () {return 'ola';})->name('dashboard');
+Route::get('/adicionarVaga', function () { return view('');})->name('adicionarVaga');
+Route::get('/adicionarCurso', function () {return view('');})->name('adicionarCurso');
+Route::get('/adicionarProjeto', function () {return view('');})->name('adicionarProjeto');
 });
 
 // Rotas de cadastro
@@ -39,12 +31,6 @@ Route::get('/cadastro', [CadastroController::class, 'Cadastrar'])->name('cadastr
 Route::post('/cadastro', [CadastroController::class, 'realizarCadastro'])->name('cadastro.Cadastrar');
 
 // Rotas: vagas,curso, projetos
-Route::get('/adicionarProjeto', function () {
-    return view('');
-})->name('adicionarProjeto');
-Route::get('/adicionarProjeto', function () {
-    return view('');
-})->name('adicionarProjeto');
-Route::get('/adicionarProjeto', function () {
-    return view('');
-})->name('adicionarProjeto');
+Route::get('/adicionarProjeto', function () {return view('');})->name('adicionarProjeto');
+Route::get('/adicionarProjeto', function () {return view('');})->name('adicionarProjeto');
+Route::get('/adicionarProjeto', function () {return view('');})->name('adicionarProjeto');
