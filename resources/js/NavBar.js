@@ -18,3 +18,4 @@ window.addEventListener('scroll', () => {
         navbar.classList.remove('transparente');
     }
 });
+
