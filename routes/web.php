@@ -3,6 +3,7 @@
 use App\Http\Controllers\CadastroController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Dashboard;
 
 Route::inertia('/', 'Welcome')->name('home');
 
@@ -12,21 +13,18 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 require __DIR__.'/settings.php';
 
-Route::get('/', function () {
-    return view('pages.home');
-})->name('principal');
+Route::get('/', function () {return view('pages.home');})->name('principal');
+
 Route::get('/login', [LoginController::class, 'getLogin'])->name('login');
 Route::post('/login', [LoginController::class, 'postLogin'])->name('auth');
 
 // Fazer um botão depois e mudar para post...
-Route::get('/logout', [LoginController::class, 'Logout'])->name('logout');
-// :)
+Route::post('/logout', [LoginController::class, 'Logout'])->name('logout');
+// 
 
 // Rotas que apenas um usuário logado vai ter acesso
 Route::middleware(['auth:usuarios'])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('pages.dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard',[Dashboard::class, 'index'])->name('dashboard');
     Route::get('/adicionarVaga', function () {
         return view('');
     })->name('adicionarVaga');
@@ -44,12 +42,4 @@ Route::post('/cadastro', [CadastroController::class, 'realizarCadastro'])->name(
 
 
 // Rotas: vagas,curso, projetos
-Route::get('/adicionarProjeto', function () {
-    return view('');
-})->name('adicionarProjeto');
-Route::get('/adicionarProjeto', function () {
-    return view('');
-})->name('adicionarProjeto');
-Route::get('/adicionarProjeto', function () {
-    return view('');
-})->name('adicionarProjeto');
+
