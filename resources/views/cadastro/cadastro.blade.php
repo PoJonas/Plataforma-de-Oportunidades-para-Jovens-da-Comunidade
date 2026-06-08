@@ -41,27 +41,27 @@
         <form action="{{ route('cadastro') }}" method="POST">
             @csrf
             <div class="nome">
-                <input type="text" name="nome" id="nome" required placeholder="">
-                <label for="nome">Nome</label>
+                <input type="text" name="nome" id="nome" required placeholder="" value="{{ old('nome') }}">
+                <label for="nome" >Nome</label>
             </div>
 
             <div class="identificacao">
-                <input type="text" name="cpf_cnpj" id="cpf_cnpj" required placeholder="">
+                <input type="text" name="cpf_cnpj" id="cpf_cnpj" required placeholder="" value="{{ old('cpf_cnpj') }}">
                 <label for="cpf_cnpj">CPF ou CNPJ</label>
             </div>
 
             <div class="email">
-                <input type="text" name="email" id="email" required placeholder="">
+                <input type="text" name="email" id="email" required placeholder="" value="{{ old('email') }}">
                 <label for="email">Email</label>
             </div>
 
             <div class="senha">
-                <input type="password" name="senha" id="senha" required placeholder="">
+                <input type="password" name="senha" id="senha" required placeholder="" >
                 <label for="senha">Senha</label>
             </div>
 
             <div class="telefone">
-                <input type="text" name="telefone" id="telefone" required placeholder="">
+                <input type="text" name="telefone" id="telefone" required placeholder="" value="{{ old('telefone') }}">
                 <label for="telefone">Telefone</label>
             </div>
 

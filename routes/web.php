@@ -18,10 +18,14 @@ Route::get('/', function () {
 Route::get('/login', [LoginController::class, 'getLogin'])->name('login');
 Route::post('/login', [LoginController::class, 'postLogin'])->name('auth');
 
+// Fazer um botão depois e mudar para post...
+Route::get('/logout', [LoginController::class, 'Logout'])->name('logout');
+// :)
+
 // Rotas que apenas um usuário logado vai ter acesso
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth:usuarios'])->group(function () {
     Route::get('/dashboard', function () {
-        return 'ola';
+        return view('pages.dashboard');
     })->name('dashboard');
     Route::get('/adicionarVaga', function () {
         return view('');
@@ -37,6 +41,7 @@ Route::middleware(['auth'])->group(function () {
 // Rotas de cadastro
 Route::get('/cadastro', [CadastroController::class, 'Cadastrar'])->name('cadastro');
 Route::post('/cadastro', [CadastroController::class, 'realizarCadastro'])->name('cadastro.Cadastrar');
+
 
 // Rotas: vagas,curso, projetos
 Route::get('/adicionarProjeto', function () {
