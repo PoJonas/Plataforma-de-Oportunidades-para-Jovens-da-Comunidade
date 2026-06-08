@@ -278,10 +278,6 @@
                     <div class="btn-cadastrar-container">
                         <button type="submit" class="btn-cadastro">Cadastrar</button>
                     </div>
-                    
-                    <div class="btn-cadastrar-container">
-                        <button type="submit" class="btn-cadastro">Cadastrar</button>
-                    </div>
 
                 </form>
             </div>
