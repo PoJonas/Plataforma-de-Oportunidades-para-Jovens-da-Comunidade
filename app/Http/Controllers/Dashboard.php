@@ -19,6 +19,10 @@ class Dashboard extends Controller
 
     $projetos = ProjetoSocial::where(['usuario_id'=>$usuario->id,'status'=> true])->count();
 
+    $listaVagas = Vaga::where('usuario_id', $usuario->id)->get();
+
+    $listarCursos = Curso::where('usuario_id', $usuario->id)->get();
+
     if($usuario && $usuario->is_admin){
         return view('pages.admin-dashboard', [
         'usuario'=>$usuario,
@@ -26,6 +30,8 @@ class Dashboard extends Controller
         "vagas"=>$totalvagas,
         "cursosAndamento"=>$cursosAndamento,
         "projeto"=>$projetos,
+        "listaVagas"=> $listaVagas,
+        "listaCursos" => $listarCursos
         ]);
     }
     else{
@@ -35,6 +41,8 @@ class Dashboard extends Controller
             'vagas'=>$totalvagas,
             'cursosAndamento'=>$cursosAndamento,
             'projeto'=>$projetos,
+            'listaVagas'=>$listaVagas,
+            'listaCursos'=> $listarCursos
         ]);
     }
     }
