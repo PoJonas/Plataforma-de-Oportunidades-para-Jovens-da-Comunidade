@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('usuario_id')->constrained('usuarios')->onDelete('cascade');
             $table->string('titulo', 60);
             $table->text('descricao');
-            $table->string('instituicao_responsavel', 100);
+            $table->string('instituicao', 100);
             $table->string('carga_horaria', 50);
             $table->enum('turno', ['Matutino', 'Vespertino', 'Noturno']);
             $table->boolean('is_gratuito')->default(false);
@@ -32,7 +32,7 @@ return new class extends Migration
             $table->integer('visualizacoes')->default(0);
             $table->softDeletes('deleted_at')->nullable();
 
-        });
+});
     }
 
     /**

@@ -15,6 +15,7 @@
         <a href="">Minhas vagas</a>
         <a href="">Meus cursos</a>
         <a href="">Meus projetos</a>
+        <a href="{{ route('criarPost') }}">Criar um novo anúncio</a>
         <a href="">Configurações</a>
 
         <h2>{{ $usuario->nome }}</h2>

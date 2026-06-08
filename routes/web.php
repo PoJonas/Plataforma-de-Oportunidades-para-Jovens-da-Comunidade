@@ -35,9 +35,9 @@ Route::middleware(['auth:usuarios'])->group(function () {
     Route::get('/adicionarProjeto', function () {
         return view('');
     })->name('adicionarProjeto');
-    Route::get('/criarPost', [CriarPostController::class, 'render_criarpost'])->name('criarpost');
-    Route::post('/criarPost', [CriarPostController::class, 'criarPostagem'])->name('criarpost');
-    
+    Route::get('/criarPost', [CriarPostController::class, 'render_criarpost'])->name('criarPost');
+    Route::post('/criarPost', [CriarPostController::class, 'criarPostagem'])->name('criarPost');
+
 });
 
 // Rotas de cadastro

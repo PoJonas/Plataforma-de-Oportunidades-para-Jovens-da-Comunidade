@@ -22,159 +22,166 @@
     <div class="container">
 
         @if(request('tipo_postagem') == 'vaga')
+
             <div class="form_vagas">
-                <h1 class="titulo">Criar Postagem — Vaga</h1>
+    <h1 class="titulo">Criar Postagem — Vaga</h1>
 
-                <form action="{{ route('criarPost') }}" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    <div class="titulo_post">
-                        <label for="titulo">Titulo</label>
-                        <input type="text" name="titulo" id="titulo" required placeholder="">    
-                    </div>
-
-                    <div class="descricao">
-                        <label for="nome">Descrição</label>
-                        <input type="text" name="descricao" id="descricao" required placeholder="">
-                    </div>
-
-                    <div class="requisitos">
-                        <label for="requisitos">Requisitos da vaga</label>
-                        <input type="text" name="requisitos" id="requisitos" required placeholder="">
-                    </div>
-
-                    <div class="regime">
-                        <label for="regime">Tipo de regime</label>
-                        <select id="regime" name="regime">
-                            <option value="" disabled selected>Selecione</option>
-                            <option value="presencial">Presencial</option>
-                            <option value="remoto">Remoto</option>
-                            <option value="hibrido">Híbrido</option>
-                        </select>
-                    </div>
-
-                    <div class="tipocontrato">
-                        <label for="tipocontrato">Tipo de Contratação</label>
-                        <select id="tipocontrato" name="tipocontrato">
-                            <option value="" disabled selected>Selecione</option>
-                            <option value="clt">CLT</option>
-                            <option value="pj">PJ</option>
-                            <option value="estagio">Estágio</option>
-                            <option value="free_lancer">Free Lancer</option>
-                            <option value="a_combinar">A combinar</option>
-                        </select>
-                    </div>
-                    
-                    <div class="modalidade">
-                        <label for="modalidade">Modalidade</label>
-                        <select id="modalidade" name="modalidade">
-                            <option value="" disabled selected>Selecione</option>
-                            <option value="integral">Tempo Integral</option>
-                            <option value="meio_periodo">Meio Período</option>
-                            <option value="flexivel">Horário FLexivel</option>
-                        </select>
-                    </div>
-
-                    <div class="carga_horaria">
-                        <label for="carga_horaria">Carga Horária Semanal</label>
-                        <input type="number" name="carga_horaria" id="carga_horaria" required placeholder="">   
-                    </div>
-
-                    <div class="exibir_salario">
-                        <label for="exibir_salario">Deseja Adicionar um Salário à vaga?</label>
-                        <select id="exibir_salario" name="exibir_salario" onchange="toggleSalario(this.value)">
-                            <option value="nao">Não</option>
-                            <option value="sim">Sim</option>
-                        </select>
-                    </div>
-
-                    <div class="salario" id="campo_salario" style="display: none;">
-                        <label for="salario">Salário</label>
-                        <input type="text" name="salario" id="salario" placeholder="">
-                    </div>
-
-                    <script>
-                        function toggleSalario(valor) {
-                            const campo = document.getElementById('campo_salario');
-                            campo.style.display = valor === 'sim' ? 'block' : 'none';
-                        }
-                    </script>
-
-                    <div class="beneficios">
-                        <label for="beneficios">Descreva os benefícios da vaga</label>
-                        <input type="text" name="beneficios" id="beneficios" required placeholder="">
-                    </div>
-                    
-                    <div class="para_pcd">
-                        <label for="para_pcd">Esta vaga é destinada a pessoas PCD ou alguma minoria?</label>
-                        <select id="para_pcd" name="para_pcd" onchange="togglePCD(this.value)">
-                            <option value="nao">Não</option>
-                            <option value="sim">Sim</option>
-                        </select>
-                    </div>
-
-                    <div class="checkbox_pcd" id="checkbox_pcd" style="display: none;">
-                        <div class="campo-checkbox">
-                            <input type="checkbox" id="opcao1" name="pcd_grupo[]" value="pcd">
-                            <label for="opcao1">Pessoa com Deficiência (PCD)</label>
-                        </div>
-                        <div class="campo-checkbox">
-                            <input type="checkbox" id="opcao2" name="pcd_grupo[]" value="negro">
-                            <label for="opcao2">Negro/Pardo</label>
-                        </div>
-                        <div class="campo-checkbox">
-                            <input type="checkbox" id="opcao3" name="pcd_grupo[]" value="lgbtqia">
-                            <label for="opcao3">LGBTQIA+</label>
-                        </div>
-                        <div class="campo-checkbox">
-                            <input type="checkbox" id="opcao4" name="pcd_grupo[]" value="indigena">
-                            <label for="opcao4">Indígena</label>
-                        </div>
-                        <div class="campo-checkbox">
-                            <input type="checkbox" id="opcao5" name="pcd_grupo[]" value="mulher">
-                            <label for="opcao5">Mulher</label>
-                        </div>
-                    </div>
-
-                    <script>
-                        function togglePCD(valor) {
-                            const campo = document.getElementById('checkbox_pcd');
-                            campo.style.display = valor === 'sim' ? 'block' : 'none';
-                        }
-                    </script>
-
-                    <div class="tem_imagem">
-                        <label for="tem_imagem">Deseja Adicionar uma imagem junto à vaga?</label>
-                        <select id="tem_imagem" name="tem_imagem" onchange="toggleImagem(this.value)">
-                            <option value="nao">Não</option>
-                            <option value="sim">Sim</option>
-                        </select>
-                    </div>
-
-                    <div class="imagem" id="campo_imagem" style="display: none;">
-                        <label for="imagem">Anexe sua imagem</label>
-                        <input type="file" name="imagem" id="imagem" accept="image/*">
-                    </div>
-
-                    <script>
-                        function toggleImagem(valor) {
-                            const campo = document.getElementById('campo_imagem');
-                            campo.style.display = valor === 'sim' ? 'block' : 'none';
-                        }
-                    </script>
-
-                    <div class="btn-cadastrar-container">
-                        <button type="submit" class="btn-cadastro">Cadastrar</button>
-                    </div>
-
-                </form>
+    <form action="{{ route('criarPost') }}" method="POST" enctype="multipart/form-data">
+        @if ($errors->any())
+            <div style="color: red;">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
             </div>
+        @endif
+        @csrf
+
+        <input type="hidden" name="tipo" value="1">
+
+        {{-- Título --}}
+        <div class="titulo_post">
+            <label for="titulo">Título</label>
+            <input type="text" name="titulo" id="titulo" required>
+        </div>
+
+        {{-- Descrição --}}
+        <div class="descricao">
+            <label for="descricao">Descrição</label>
+            <input type="text" name="descricao" id="descricao" required>
+        </div>
+
+        {{-- Requisitos --}}
+        <div class="requisitos">
+            <label for="requisitos">Requisitos da vaga</label>
+            <input type="text" name="requisitos" id="requisitos" required>
+        </div>
+
+        {{-- Regime — valores capitalizados para bater com o in: do controller --}}
+        <div class="regime">
+            <label for="regime">Tipo de regime</label>
+            <select name="regime" id="regime" required>
+                <option value="" disabled selected>Selecione</option>
+                <option value="Presencial">Presencial</option>
+                <option value="Remoto">Remoto</option>
+                <option value="Hibrido">Híbrido</option>
+            </select>
+        </div>
+
+        {{-- Tipo de contrato — name corrigido + valores alinhados --}}
+        <div class="tipocontrato">
+            <label for="tipo_contrato">Tipo de Contratação</label>
+            <select name="tipo_contrato" id="tipo_contrato" required>
+                <option value="" disabled selected>Selecione</option>
+                <option value="CLT">CLT</option>
+                <option value="PJ">PJ</option>
+                <option value="Estágio">Estágio</option>
+                <option value="A combinar">A combinar</option>
+            </select>
+        </div>
+
+        {{-- Modalidade — valores completos --}}
+        <div class="modalidade">
+            <label for="modalidade">Modalidade</label>
+            <select name="modalidade" id="modalidade" required>
+                <option value="" disabled selected>Selecione</option>
+                <option value="Tempo Integral">Tempo Integral</option>
+                <option value="Meio Período">Meio Período</option>
+                <option value="Horário Flexivel">Horário Flexível</option>
+            </select>
+        </div>
+
+        {{-- Carga horária --}}
+        <div class="carga_horaria">
+            <label for="carga_horaria">Carga Horária Semanal</label>
+            <input type="number" name="carga_horaria" id="carga_horaria" required>
+        </div>
+
+        {{-- Salário (opcional) --}}
+        <div class="exibir_salario">
+            <label for="exibir_salario">Deseja adicionar um salário à vaga?</label>
+            <select id="exibir_salario" name="exibir_salario"
+                    onchange="document.getElementById('campo_salario').style.display =
+                              this.value === 'sim' ? 'block' : 'none'">
+                <option value="nao">Não</option>
+                <option value="sim">Sim</option>
+            </select>
+        </div>
+
+        <div id="campo_salario" style="display: none;">
+            <label for="salario">Salário</label>
+            <input type="text" name="salario" id="salario">
+        </div>
+
+        {{-- Benefícios --}}
+        <div class="beneficios">
+            <label for="beneficios">Benefícios da vaga</label>
+            <input type="text" name="beneficios" id="beneficios" required>
+        </div>
+
+        {{-- vaga_pcd como 0/1 para bater com in:0,1 no controller --}}
+        <div class="para_pcd">
+            <label for="vaga_pcd">Esta vaga é destinada a PCD ou minoria?</label>
+            <select name="vaga_pcd" id="vaga_pcd"
+                    onchange="document.getElementById('checkbox_pcd').style.display =
+                              this.value === '1' ? 'block' : 'none'">
+                <option value="0">Não</option>
+                <option value="1">Sim</option>
+            </select>
+        </div>
+
+        {{-- tipo_pcd como radio (valor único) para bater com o campo string do banco --}}
+        <div id="checkbox_pcd" style="display: none;">
+            <label>Selecione o grupo:</label>
+            <div><input type="radio" name="tipo_pcd" value="pcd"> Pessoa com Deficiência (PCD)</div>
+            <div><input type="radio" name="tipo_pcd" value="preto_pardo"> Negro/Pardo</div>
+            <div><input type="radio" name="tipo_pcd" value="lgbtqia+"> LGBTQIA+</div>
+            <div><input type="radio" name="tipo_pcd" value="indigena"> Indígena</div>
+            <div><input type="radio" name="tipo_pcd" value="mulher"> Mulher</div>
+        </div>
+
+        {{-- Imagem (opcional) --}}
+        <div class="tem_imagem">
+            <label for="tem_imagem">Deseja adicionar uma imagem?</label>
+            <select id="tem_imagem" name="tem_imagem"
+                    onchange="document.getElementById('campo_imagem').style.display =
+                              this.value === 'sim' ? 'block' : 'none'">
+                <option value="nao">Não</option>
+                <option value="sim">Sim</option>
+            </select>
+        </div>
+
+        <div id="campo_imagem" style="display: none;">
+            <label for="imagem">Anexe sua imagem</label>
+            <input type="file" name="imagem" id="imagem" accept="image/*">
+        </div>
+
+        <div class="btn-cadastrar-container">
+            <button type="submit" class="btn-cadastro">Cadastrar</button>
+        </div>
+
+    </form>
+    </div>
 
         @elseif(request('tipo_postagem') == 'curso')
             <div class="form_curso">
                 <h1 class="titulo">Criar Postagem — Curso</h1>
 
                 <form action="{{ route('criarPost') }}" method="POST" enctype="multipart/form-data">
+                    @if ($errors->any())
+                        <div style="color: red;">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     @csrf
+
+                    <input type="hidden" name="tipo" value="2">
+
                     <div class="titulo_post">
                         <label for="titulo">Titulo</label>
                         <input type="text" name="titulo" id="titulo" required placeholder="">    
@@ -185,13 +192,13 @@
                         <input type="text" name="descricao" id="descricao" required placeholder="">
                     </div>
 
-                    <div class="instituicao">
+                    <div class="instituicao_responsavel">
                         <label for="titulo">instituicao</label>
-                        <input type="text" name="instituicao" id="instituicao" required placeholder="">    
+                        <input type="text" name="instituicao_responsavel" id="instituicao_responsavel" required placeholder="">    
                     </div>
 
                     <div class="carga_horaria">
-                        <label for="nome">Descrição</label>
+                        <label for="nome">Carga horária</label>
                         <input type="number" name="carga_horaria" id="carga_horaria" required placeholder="">
                     </div>
 
@@ -199,18 +206,18 @@
                         <label for="turno">turno</label>
                         <select id="turno" name="turno">
                             <option value="" disabled selected>Selecione</option>
-                            <option value="matutino">Matutino</option>
-                            <option value="vespertino">Vespertino</option>
-                            <option value="noturno">Noturno</option>
+                            <option value="Matutino">Matutino</option>
+                            <option value="Vespertino">Vespertino</option>
+                            <option value="Noturno">Noturno</option>
                         </select>
                     </div>
 
                     <div class="gratuito">
                         <label for="gratuito">O curso será gratuito?</label>
-                        <select id="gratuito" name="gratuito" onchange="togglePreco(this.value)">
+                        <select id="is_gratuito" name="is_gratuito" onchange="togglePreco(this.value)">
                             <option value="" disabled selected>Selecione</option>
-                            <option value="sim">Sim</option>
-                            <option value="nao">Não</option>
+                            <option value="1">Sim</option>
+                            <option value="0">Não</option>
                         </select>
                     </div>
 
@@ -222,16 +229,16 @@
                     <script>
                         function togglePreco(valor) {
                             const campo = document.getElementById('campo_preco');
-                            campo.style.display = valor === 'nao' ? 'block' : 'none';
+                            campo.style.display = valor === '0' ? 'block' : 'none';
                         }
                     </script>
 
                     <div class="possui_certificado">
                         <label for="certificado">O curso terá certificado?</label>
-                        <select id="opcoes_certificado" name="opcoes_certificado">
+                        <select id="possui_certificado" name="possui_certificado">
                             <option value="" disabled selected>Selecione</option>
-                            <option value="sim">Sim</option>
-                            <option value="nao">Não</option>
+                            <option value="1">Sim</option>
+                            <option value="0">Não</option>
                         </select>
                     </div>
 
@@ -258,8 +265,8 @@
                     <div class="tem_imagem">
                         <label for="tem_imagem">Deseja Adicionar uma imagem junto à vaga?</label>
                         <select id="tem_imagem" name="tem_imagem" onchange="toggleImagem(this.value)">
-                            <option value="nao">Não</option>
-                            <option value="sim">Sim</option>
+                            <option value="0">Não</option>
+                            <option value="1">Sim</option>
                         </select>
                     </div>
 
@@ -271,7 +278,7 @@
                     <script>
                         function toggleImagem(valor) {
                             const campo = document.getElementById('campo_imagem');
-                            campo.style.display = valor === 'sim' ? 'block' : 'none';
+                            campo.style.display = valor === '1' ? 'block' : 'none';
                         }
                     </script>
 
@@ -286,7 +293,19 @@
             <div class="form_evento">
                 <h1 class="titulo">Criar Postagem — Evento</h1>
                 <form action="{{ route('criarPost') }}" method="POST" enctype="multipart/form-data">
+                    @if ($errors->any())
+                        <div style="color: red;">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     @csrf
+
+                    <input type="hidden" name="tipo" value="3">
+
                     <div class="titulo_post">
                         <label for="titulo">Titulo</label>
                         <input type="text" name="titulo" id="titulo" required placeholder="">    
@@ -298,8 +317,8 @@
                     </div>
 
                     <div class="organizacao">
-                        <label for="organizacao">Organização responsável</label>
-                        <input type="text" name="organizacao" id="organizacao" required placeholder="">    
+                        <label for="organizacao_responsavel">Organização responsável</label>
+                        <input type="text" name="organizacao_responsavel" id="organizacao_responsavel" required>
                     </div>
 
                     <div class="local">
@@ -307,46 +326,46 @@
                         <input type="text" name="local" id="local" required placeholder="">
                     </div>
 
-                    <div class="checkbox_publico_alvo" id="checkbox_publico_alvo">
-                        <label for="publico_alvo">Publico alvo do evento</label>
+                    <div class="checkbox_publico_alvo">
+                        <label>Público alvo do evento</label>
                         <div class="campo-checkbox">
-                            <input type="checkbox" id="opcao1" name="pcd_grupo[]" value="crianca">
-                            <label for="opcao1">Crianças</label>
+                            <input type="checkbox" name="publico_alvo[]" value="crianca">
+                            <label>Crianças</label>
                         </div>
                         <div class="campo-checkbox">
-                            <input type="checkbox" id="opcao2" name="pcd_grupo[]" value="adulto">
-                            <label for="opcao2">Adultos</label>
+                            <input type="checkbox" name="publico_alvo[]" value="adulto">
+                            <label>Adultos</label>
                         </div>
                         <div class="campo-checkbox">
-                            <input type="checkbox" id="opcao3" name="pcd_grupo[]" value="idoso">
-                            <label for="opcao3">Idosos</label>
+                            <input type="checkbox" name="publico_alvo[]" value="idoso">
+                            <label>Idosos</label>
                         </div>
                         <div class="campo-checkbox">
-                            <input type="checkbox" id="opcao4" name="pcd_grupo[]" value="estutantes">
-                            <label for="opcao4">Estutantes</label>
+                            <input type="checkbox" name="publico_alvo[]" value="estudante"> {{-- ✅ corrigido --}}
+                            <label>Estudantes</label>
                         </div>
                     </div>
 
                     <div class="gratuito">
-                        <label for="gratuito">O evento será gratuito?</label>
-                        <select id="gratuito" name="gratuito" onchange="togglePreco(this.value)>
+                        <label for="is_gratuito">O evento será gratuito?</label>
+                        <select id="is_gratuito" name="is_gratuito" onchange="togglePreco(this.value)">
                             <option value="" disabled selected>Selecione</option>
-                            <option value="sim">Sim</option>
-                            <option value="nao">Não</option>
+                            <option value="1">Sim</option>
+                            <option value="0">Não</option>
                         </select>
                     </div>
 
                     <div class="preco" id="campo_preco" style="display: none;">
                         <label for="valor">Digite o valor de inscrição</label>
-                        <input type="text" name="preco" id="valor" placeholder="">
+                        <input type="number" name="valor" id="valor" placeholder="">
                     </div>
 
                     <script>
                         function togglePreco(valor) {
                             const campo = document.getElementById('campo_preco');
-                            campo.style.display = valor === 'nao' ? 'block' : 'none';
+                            campo.style.display = valor === '0' ? 'block' : 'none';
                         }
-                    </script>              
+                    </script>             
 
                     <div class="data_inicio">
                         <label for="data_inicio">Digite a data de inicio do curso</label>

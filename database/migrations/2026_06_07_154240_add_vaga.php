@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('salario', 100)->nullable();
             $table->text('beneficios');
             $table->boolean('vaga_pcd')->default(false);
+            $table->enum('tipo_pcd', ['pcd', 'preto_pardo', 'lgbtqia+', 'indigena',  'mulher'])->nullable();
             $table->string('imagem')->nullable();
             $table->boolean('status')->default(true);
             $table->integer('visualizacoes')->default(0);
