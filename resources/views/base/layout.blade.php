@@ -24,7 +24,7 @@
             <li><a href="#">Vagas</a></li>
             <li><a href="#">Cursos</a></li>
             <li><a href="#">Projetos</a></li>
-            <li><a href="#">Dashboard</a></li>
+            <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
             <li class="nav-mobile-extra"><a href="{{ route('login') }}">Entrar</a></li>
             <li class="nav-mobile-extra"><a href="{{ route('cadastro') }}">Cadastre-se</a></li>
         </ul>

@@ -1,0 +1,19 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>Ícone de saída</title>
+  <desc>Seta de saída apontando para fora de uma porta, na cor vermelha com fundo transparente</desc>
+
+  <!-- Porta (retângulo com abertura no lado direito) -->
+  <path d="M30,20 L30,180 L110,180 L110,130 L110,70 L110,20 Z" fill="none" stroke="rgb(248, 112, 112)" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/>
+  <!-- Topo da abertura -->
+  <line x1="110" y1="20" x2="110" y2="70" stroke="rgb(248, 112, 112)" stroke-width="10" stroke-linecap="round"/>
+  <!-- Base da abertura -->
+  <line x1="110" y1="130" x2="110" y2="180" stroke="rgb(248, 112, 112)" stroke-width="10" stroke-linecap="round"/>
+
+  <!-- Linha horizontal da seta -->
+  <line x1="60" y1="100" x2="168" y2="100" stroke="rgb(248, 112, 112)" stroke-width="11" stroke-linecap="round"/>
+  <!-- Ponta da seta -->
+  <polyline points="142,76 170,100 142,124" fill="none" stroke="rgb(248, 112, 112)" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Detalhe vertical interno da porta -->
+  <line x1="72" y1="32" x2="72" y2="168" stroke="rgb(248, 112, 112)" stroke-width="5" stroke-linecap="round" opacity="0.3"/>
+</svg>
