@@ -35,7 +35,7 @@ class Dashboard extends Controller
     else{
         return view("pages.dashboard", [
             'usuario'=>$usuario,
-            'cargo'=>"cidadão",
+            'cargo'=>"Cidadão",
             'vagas'=>$totalvagas,
             'cursosAndamento'=>$cursosAndamento,
             'projeto'=>$projetos,

@@ -1,0 +1,374 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+}
+
+:root {
+    --cor-fundo: #243c4c;
+    --azul: #5289ad;
+    --azul-escuro: #3f7290;
+    --azul-claro: #acbcbf;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-areas: "sidebar main";
+    background-color: var(--azul-claro);
+}
+
+hr {
+    border: none;
+    border-top: 2px solid rgba(113, 134, 138, 0.2);
+    margin: 1rem 0;
+}
+
+nav {
+    grid-area: sidebar;
+    height: 100vh;
+    background: var(--cor-fundo);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-right: 1px solid rgba(172, 188, 191, 0.15);
+    color: #f1f1f1;
+    position: sticky;
+    top: 0;
+}
+
+main {
+    grid-area: main;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #d6e4ea 0%, #c5d8e0 100%);
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.navegacao {
+    margin-top: 1rem;
+    margin-left: 1rem;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.navegacao a {
+    text-decoration: none;
+    color: #f1f1f1;
+    margin-top: 0.5rem;
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: 0.3s ease;
+    border-left: 2px solid transparent;
+}
+
+.navegacao a:hover {
+    background: rgba(82, 137, 173, 0.15);
+    border-left: 2px solid var(--azul);
+    color: var(--azul-claro);
+    transform: translateX(6px);
+    padding-left: 1rem;
+}
+
+.navegacao img {
+    width: 60px;
+}
+
+.logout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem;
+    margin: 1rem;
+}
+
+.btn-logout {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    border: none;
+    font-size: 16px;
+    background-color: transparent;
+    color: rgb(248, 112, 112);
+    cursor: pointer;
+}
+
+.btn-logout img {
+    width: 25px;
+}
+
+/* bem vindo */
+.container-bemvindo {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 20vh;
+}
+
+.bem-vindo h1 {
+    color: var(--cor-fundo);
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.bem-vindo span {
+    font-size: 18px;
+}
+
+.bem-vindo {
+    margin: 2rem;
+}
+
+/* cards */
+.cards {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 100px;
+}
+
+.cards img {
+    width: 40px;
+}
+
+.candidaturas-ativas,
+.cursos-andamento,
+.proximos-projetos {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--azul);
+    color: #f1f1f1;
+    padding: 2rem;
+    border-radius: 0.5rem;
+}
+
+.abas-navegacao {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.abas-navegacao button {
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: transparent;
+    transition: 0.2s;
+    color: var(--azul);
+}
+
+.abas-navegacao button.ativo {
+    transform: scale(1.1);
+    color: var(--azul);
+    font-weight: bold;
+    border-bottom: 2px solid var(--azul);
+}
+
+#aba-cursos,
+#aba-candidaturas,
+#aba-projetos {
+    width: 70%;
+    height: 35vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.5rem;
+    background: rgba(82, 137, 173, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(172, 188, 191, 0.2);
+    color: var(--azul);
+}
+
+#aba-cursos div,
+#aba-candidaturas div,
+#aba-projetos div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#aba-cursos div>a,
+#aba-candidaturas div>a,
+#aba-projetos div>a {
+    text-decoration: none;
+    background-color: var(--azul);
+    color: #f1f1f1;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: 0.3s;
+}
+
+#aba-cursos div>a:hover,
+#aba-candidaturas div>a:hover,
+#aba-projetos div>a:hover {
+    transform: scale(1.05);
+    background-color: var(--azul-escuro);
+}
+
+.container-candidaturas {
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+/* tablet */
+@media (max-width: 1024px) {
+    body {
+        grid-template-columns: 200px 1fr;
+    }
+
+    .cards {
+        gap: 40px;
+    }
+
+    .candidaturas-ativas,
+    .cursos-andamento,
+    .proximos-projetos {
+        width: 28%;
+        padding: 1rem;
+    }
+
+    #aba-cursos,
+    #aba-candidaturas,
+    #aba-projetos {
+        width: 85%;
+    }
+
+    .bem-vindo h1 {
+        font-size: 32px;
+    }
+}
+
+/* mobile */
+@media (max-width: 768px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "main"
+            "sidebar";
+    }
+
+    nav {
+        grid-area: sidebar;
+        height: auto;
+        position: static;
+    }
+
+    .container {
+        height: auto;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    .navegacao {
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 0;
+        gap: 6px;
+    }
+
+    .navegacao img {
+        width: 40px;
+    }
+
+    .logout {
+        padding: 1rem;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .btn-logout img {
+        display: none;
+    }
+
+    main {
+        min-height: auto;
+    }
+
+    .cards {
+        flex-direction: column;
+        gap: 16px;
+        padding: 1rem;
+    }
+
+    .candidaturas-ativas,
+    .cursos-andamento,
+    .proximos-projetos {
+        width: 80%;
+    }
+
+    .abas-navegacao {
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #aba-cursos,
+    #aba-candidaturas,
+    #aba-projetos {
+        width: 90%;
+        height: auto;
+        padding: 2rem 1rem;
+    }
+
+    .bem-vindo h1 {
+        font-size: 26px;
+    }
+
+    .bem-vindo span {
+        font-size: 15px;
+    }
+
+    .bem-vindo {
+        margin: 1rem;
+    }
+}
+
+/* mobile pequeno */
+@media (max-width: 480px) {
+
+    .candidaturas-ativas,
+    .cursos-andamento,
+    .proximos-projetos {
+        width: 95%;
+    }
+
+    #aba-cursos,
+    #aba-candidaturas,
+    #aba-projetos {
+        width: 95%;
+    }
+
+    .bem-vindo h1 {
+        font-size: 22px;
+    }
+    .btn-logout img {
+        display: none;
+    }
+}
