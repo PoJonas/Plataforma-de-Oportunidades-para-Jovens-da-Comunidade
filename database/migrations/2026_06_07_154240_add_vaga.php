@@ -20,11 +20,12 @@ return new class extends Migration
             $table->text('requisitos');
             $table->enum('regime', ['Presencial', 'Remoto', 'Hibrido']);
             $table->enum('tipo_contrato', ['CLT', 'PJ', 'A combinar', 'Estágio']);
+            $table->enum('modalidade', ['Tempo Integral', 'Meio Período', 'Horário Flexivel']);
             $table->string('carga_horaria', 50);
             $table->string('salario', 100)->nullable();
             $table->text('beneficios');
-            $table->enum('modalidade', ['Tempo Integral', 'Meio Período', 'Freelance']);
             $table->boolean('vaga_pcd')->default(false);
+            $table->string('imagem')->nullable();
             $table->boolean('status')->default(true);
             $table->integer('visualizacoes')->default(0);
             $table->softDeletes('deleted_at')->nullable();

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CadastroController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\CriarPostController;
 use Illuminate\Support\Facades\Route;
 
 Route::inertia('/', 'Welcome')->name('home');
@@ -20,17 +21,18 @@ Route::post('/login', [LoginController::class, 'postLogin'])->name('auth');
 
 // Rotas que apenas um usuário logado vai ter acesso
 Route::middleware(['auth'])->group(function () {
-Route::get('/dashboard', function () {return 'ola';})->name('dashboard');
+Route::get('/dashboard', function () {return view('pages.dashboard');})->name('dashboard');
 Route::get('/adicionarVaga', function () { return view('');})->name('adicionarVaga');
 Route::get('/adicionarCurso', function () {return view('');})->name('adicionarCurso');
 Route::get('/adicionarProjeto', function () {return view('');})->name('adicionarProjeto');
+
 });
 
 // Rotas de cadastro
 Route::get('/cadastro', [CadastroController::class, 'Cadastrar'])->name('cadastro');
 Route::post('/cadastro', [CadastroController::class, 'realizarCadastro'])->name('cadastro.Cadastrar');
 
-// Rotas: vagas,curso, projetos
-Route::get('/adicionarProjeto', function () {return view('');})->name('adicionarProjeto');
-Route::get('/adicionarProjeto', function () {return view('');})->name('adicionarProjeto');
-Route::get('/adicionarProjeto', function () {return view('');})->name('adicionarProjeto');
+Route::get('/criarPost', [CriarPostController::class, 'render_criarpost'])->name('criarPost');
+Route::post('/criarPost', [CriarPostController::class, 'criarPostagem'])->name('criarPost');
+// Criar fallbacks para erro 404, erro interno, erro de autorização
+

@@ -4,30 +4,7 @@ body {
     margin: 0;
     min-height: 100vh;
     position: relative;
-<<<<<<< HEAD
-    background: linear-gradient(
-        135deg,
-        var(--azul-claro) 0%,
-        var(--azul) 50%,
-        var(--azul-escuro) 100%
-    );
-    background-size: 400% 400%;
-    animation: mover 8s ease infinite;
-}
-
-@keyframes mover {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-=======
     overflow: hidden;
->>>>>>> 74001a750131f2734cc88890566ca4c50404f2be
 }
 
 main {
@@ -43,12 +20,7 @@ main {
     max-width: 400px;
     margin: 40px auto;
     padding: 40px;
-<<<<<<< HEAD
-    border-radius: 20px;
-
-=======
     border-radius: 7px;
->>>>>>> 74001a750131f2734cc88890566ca4c50404f2be
     background: rgba(36, 60, 76, 0.85);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);

@@ -22,16 +22,16 @@ return new class extends Migration
             $table->string('publico_alvo', 100);
             $table->boolean('is_gratuito')->default(false);
             $table->integer('valor')->nullable();
-            $table->boolean('possui_certificado')->default(false);
             $table->date('data_inicio');
             $table->date('data_fim')->nullable();
             $table->time('hora_inicio');
             $table->time('hora_fim')->nullable();
             $table->integer('limite_vagas')->nullable();
+            $table->string('imagem')->nullable();
             $table->boolean('status')->default(true);
             $table->integer('visualizacoes')->default(0);
             $table->softDeletes('deleted_at')->nullable();
-
+            
         });
     }
 

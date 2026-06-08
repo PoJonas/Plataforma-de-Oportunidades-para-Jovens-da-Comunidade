@@ -26,8 +26,8 @@ return new class extends Migration
             $table->text('pre_requisitos');
             $table->date('data_inicio');
             $table->date('data_fim')->nullable();
-            $table->boolean('vaga_pcd')->default(false);
             $table->integer('limite_vagas')->nullable();
+            $table->string('imagem')->nullable();
             $table->boolean('status')->default(true);
             $table->integer('visualizacoes')->default(0);
             $table->softDeletes('deleted_at')->nullable();

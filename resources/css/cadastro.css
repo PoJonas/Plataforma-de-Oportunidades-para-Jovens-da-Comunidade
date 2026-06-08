@@ -4,29 +4,6 @@ body {
     margin: 0;
     min-height: 100vh;
     position: relative;
-<<<<<<< HEAD
-    background: linear-gradient(
-        135deg,
-        var(--azul-claro) 0%,
-        var(--azul) 50%,
-        var(--azul-escuro) 100%
-    );
-    background-size: 400% 400%;
-    animation: mover 8s ease infinite;
-}
-
-@keyframes mover {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-=======
->>>>>>> 74001a750131f2734cc88890566ca4c50404f2be
 }
 
 main {
@@ -37,21 +14,12 @@ main {
     background-color: #f4fcfb;
 }
 
-<<<<<<< HEAD
-.container-login {
-=======
 .container-cadastro {
->>>>>>> 74001a750131f2734cc88890566ca4c50404f2be
     width: 100%;
     max-width: 400px;
     margin: 40px auto;
     padding: 40px;
-<<<<<<< HEAD
-    border-radius: 20px;
-
-=======
     border-radius: 7px;
->>>>>>> 74001a750131f2734cc88890566ca4c50404f2be
     background: rgba(36, 60, 76, 0.85);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
@@ -69,37 +37,11 @@ main {
     gap: 20px;
 }
 @media (max-width: 768px) {
-<<<<<<< HEAD
-    .container-login {
-        margin-top: 8rem;
-        margin-bottom: 5rem;
-=======
     .container-cadastro {
         margin: 8rem 1rem 5rem;
->>>>>>> 74001a750131f2734cc88890566ca4c50404f2be
     }
 }
 
-<<<<<<< HEAD
-.bem-vindo img {
-    width: 45px;
-    margin-bottom: 16px;
-}
-
-.bem-vindo h4 {
-    font-size: 28px;
-    margin-bottom: 4px;
-    font-family: 'Bebas Neue', sans-serif;
-    letter-spacing: 0.1rem;
-}
-
-.bem-vindo span {
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.7);
-}
-
-=======
->>>>>>> 74001a750131f2734cc88890566ca4c50404f2be
 .usuario,
 .email,
 .senha,
@@ -169,11 +111,8 @@ main {
 .telefone input:not(:placeholder-shown) + label {
     top: 0;
     font-size: 13px;
-<<<<<<< HEAD
     color: var(--azul);
-=======
     color: #ffffff;
->>>>>>> 74001a750131f2734cc88890566ca4c50404f2be
     background-color: transparent;
     border-radius: 4px;
 }
@@ -185,11 +124,7 @@ main {
     margin-top: 10px;
 }
 
-<<<<<<< HEAD
-.btn-login {
-=======
 .btn-cadastro {
->>>>>>> 74001a750131f2734cc88890566ca4c50404f2be
     width: 100%;
     padding: 14px;
     border-radius: 12px;
@@ -211,8 +146,6 @@ main {
 
 .redirect_login {
     color: #ffffff;
-<<<<<<< HEAD
-=======
     text-align: center;
     margin-top: 2rem;
     text-decoration: none;
@@ -225,5 +158,4 @@ main {
 }
 .redirect_login a:hover {
     color: rgba(255, 255, 255, 0.6);
->>>>>>> 74001a750131f2734cc88890566ca4c50404f2be
 }
