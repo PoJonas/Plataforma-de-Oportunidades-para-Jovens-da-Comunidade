@@ -32,6 +32,7 @@ return new class extends Migration
             $table->integer('visualizacoes')->default(0);
             $table->softDeletes('deleted_at')->nullable();
             
+            
         });
     }
 
