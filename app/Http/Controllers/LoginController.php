@@ -9,6 +9,7 @@ class LoginController extends Controller
 {
     public function getLogin(Request $request)
     {
+        
         return view('login.login');
     }
 
@@ -27,12 +28,21 @@ class LoginController extends Controller
 
         if (Auth::guard('usuarios')->attempt($credentials)) {
             $request->session()->regenerate();
-
-            return redirect('dashboard');
+            return redirect()->route('dashboard');
         }
 
         return back()->withErrors([
             'email' => 'As credenciais informadas não correspondem aos nossos registros.',
         ])->onlyInput('email');
+    }
+
+    public function Logout(Request $request){
+
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect()->route('login');
+
     }
 }
