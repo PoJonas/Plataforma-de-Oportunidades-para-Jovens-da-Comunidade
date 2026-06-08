@@ -12,16 +12,13 @@ class Dashboard extends Controller
     public function index(){
         
     $usuario = auth()->guard('usuarios')->user();
-
     $totalvagas = Vaga::where(['usuario_id' => $usuario->id,'status'=> true])->count();
-
     $cursosAndamento = Curso::where(['usuario_id'=>$usuario->id,'status'=> true])->count();
-
     $projetos = ProjetoSocial::where(['usuario_id'=>$usuario->id,'status'=> true])->count();
-
     $listaVagas = Vaga::where('usuario_id', $usuario->id)->get();
-
     $listarCursos = Curso::where('usuario_id', $usuario->id)->get();
+    $listarProjetos = ProjetoSocial::where('usuario_id', $usuario->id)->get();
+    
 
     if($usuario && $usuario->is_admin){
         return view('pages.admin-dashboard', [
@@ -31,7 +28,8 @@ class Dashboard extends Controller
         "cursosAndamento"=>$cursosAndamento,
         "projeto"=>$projetos,
         "listaVagas"=> $listaVagas,
-        "listaCursos" => $listarCursos
+        "listaCursos" => $listarCursos,
+        "listarProjetos" => $listarProjetos,
         ]);
     }
     else{
@@ -42,7 +40,8 @@ class Dashboard extends Controller
             'cursosAndamento'=>$cursosAndamento,
             'projeto'=>$projetos,
             'listaVagas'=>$listaVagas,
-            'listaCursos'=> $listarCursos
+            'listaCursos'=> $listarCursos,
+            "listarProjetos" => $listarProjetos,
         ]);
     }
     }
