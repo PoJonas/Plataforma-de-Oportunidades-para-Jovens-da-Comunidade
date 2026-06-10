@@ -6,6 +6,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
 use Illuminate\Http\Middleware\AddLinkHeadersForPreloadedAssets;
+use Illuminate\Http\Request;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -22,12 +23,11 @@ return Application::configure(basePath: dirname(__DIR__))
             AddLinkHeadersForPreloadedAssets::class,
         ]);
     })
-    ->withMiddleware(function (Middleware $middleware) {
-    // Se o usuário tentar acessar a dashboard deslogado, o Laravel joga ele para cá:
-    $middleware->redirectTo(
-        guests: '/login'
-    );
-})
+    ->withMiddleware(function ($middleware) {
+        $middleware->redirectGuestsTo(function (Request $request) {
+            return route('login');
+        });
+    })
     ->withExceptions(function (Exceptions $exceptions): void {
-        //
+        
     })->create();

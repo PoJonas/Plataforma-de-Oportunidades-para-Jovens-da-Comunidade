@@ -37,7 +37,7 @@
     <main>
         <div class="container-bemvindo">
             <div class="bem-vindo">
-                <h1>Bem vindo, {{ ucfirst(strtolower($usuario->nome)) }}!</h1>
+                <h1>Bem-vindo, {{ ucfirst(strtolower($usuario->nome)) }}!</h1>
                 <span>Aqui está o resumo das suas atividades e oportunidades recentes.</span>
                 <hr>
             </div>
